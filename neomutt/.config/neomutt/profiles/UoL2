@@ -1,0 +1,28 @@
+
+set real_name = "Joe Lewis"
+set from = "jmlewis@liverpool.ac.uk"
+
+# uncomment this to connect direct to IMAP
+#set imap_user = "jmlewis@liverpool.ac.uk"
+
+# To avoid storing your password in the .neomuttrc:
+# Previous command won't work in some shells. You can use the following:
+# echo -n 'mypassword' | gpg --encrypt -r 0x1234567890ABCDEF > ~/.neomutt/account.gpg
+# !!! But be warned your password will be saved to shell history.
+
+# Uncomment this to connect direct via IMAP
+
+set folder = "~/Mail/UoL"
+set mbox_type = Maildir
+set spool_file = "+INBOX"
+set postponed = "+Drafts"
+set record = "+Sent"
+
+set mail_check = 60
+
+set smtp_url = "smtp://jmlewis@liverpool.ac.uk@localhost:1026/"
+
+set ssl_force_tls = no
+set ssl_starttls = no
+
+

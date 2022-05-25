@@ -1,0 +1,50 @@
+[calendars]
+
+[[google]]
+  path = ~/.calendar/google/drjoelewis101@gmail.com
+  color = dark blue
+  priority = 1
+
+[[on calls]]
+  path = ~/.calendar/google/h8ctbgnb6h5vhvl0or66amtjtk@group.calendar.google.com
+  color = light red
+  priority = 10
+
+[[holidays]]
+  path = ~/.calendar/google/om6u3qlapp3b5jqd4pvun5gu9g@group.calendar.google.com
+  color = yellow
+  priority = 9
+
+[[uol]]
+  path = ~/.calendar/uol/calendar
+  color = dark blue
+  priority = 1
+
+[[lstmed]]
+  path = ~/.calendar/lstmed/calendar
+  color = dark blue
+  priority = 1
+
+[[public holidays]]
+  path = ~/.calendar/google/cln2stbb4dk6ur39chgnig37e9nnas1eeon66obccln68obi5pjmurr7dhiisorfdk@virtual
+  color = light magenta
+  priority = 8
+
+[locale]
+timeformat = %H:%M
+longdateformat = %d-%b-%Y
+dateformat = %d-%m-%y
+datetimeformat = %Y-%m-%d %H:%M
+longdatetimeformat = %Y-%m-%d %H:%M
+
+
+[default]
+highlight_event_days = True
+
+[view]
+frame = width
+event_view_always_visible = True
+blank_line_before_day = True
+agenda_day_format = {bold}{name}{date-long}{reset}
+agenda_event_format = {calendar-color}{cancelled}{start-end-time-style} {title}{repeat-symbol}
+

@@ -1,0 +1,23 @@
+
+set real_name = "Joe Lewis"
+set from = "joseph.lewis@lstmed.ac.uk"
+
+# To avoid storing your password in the .neomuttrc:
+# Previous command won't work in some shells. You can use the following:
+# echo -n 'mypassword' | gpg --encrypt -r 0x1234567890ABCDEF > ~/.neomutt/account.gpg
+# !!! But be warned your password will be saved to shell history.
+
+set folder = "~/Mail/lstmed"
+set mbox_type = Maildir
+set spool_file = "+INBOX"
+set postponed = "+Drafts"
+set record = "+Sent"
+
+set mail_check = 60
+
+set smtp_url = "smtp://joseph.lewis@lstmed.ac.uk@localhost:1025/"
+
+set ssl_force_tls = no
+set ssl_starttls = no
+
+

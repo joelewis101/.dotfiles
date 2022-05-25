@@ -1,0 +1,115 @@
+# vim: filetype=muttrc
+
+# General rebindings
+bind attach <return> view-mailcap
+bind attach l view-mailcap
+bind editor <space> noop
+#bind pager c imap-fetch-mail
+bind index G last-entry
+bind index g noop
+bind index gg first-entry
+bind pager,attach h exit
+bind pager j next-line
+bind pager k previous-line
+bind pager l view-attachments
+bind index D delete-message
+bind index U undelete-message
+bind index L limit
+bind index h noop
+bind index l display-message
+bind browser h goto-parent
+bind browser l select-entry
+bind pager,browser gg top-page
+bind pager,browser G bottom-page
+bind index,pager,browser d half-down
+bind index,pager,browser u half-up
+bind index,pager R group-reply
+bind editor <Tab> complete-query
+bind index,pager x noop
+
+# sidebar mappings
+bind index,pager \Ck sidebar-prev
+bind index,pager \Cj sidebar-next
+bind index,pager \Co sidebar-open
+bind index,pager \Cl sidebar-open
+bind index,pager \Cp sidebar-prev-new
+bind index,pager \Cn sidebar-next-new
+bind index,pager B sidebar-toggle-visible
+
+# global index and pager shortcuts
+bind index,pager @ compose-to-sender
+bind index,pager D purge-message
+#bind index <tab> sync-mailbox
+bind index <space> collapse-thread
+
+# Email completion bindings
+bind editor <Tab> complete-query
+bind editor ^T complete
+
+# archive with A
+macro index,pager A ":set confirmappend=no delete=yes\n<tag-prefix><save-message>=archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n" "Archive message (euther current or tagged)"
+
+# Press A to add contact to Khard address book
+#macro index,pager A \
+    #"<pipe-message>khard add-mail<return>" \
+    #"add the sender email address to khard"
+
+
+macro index s "<enter-command>unset wait_key\n<pipe-entry>bogofilter -n\n<enter-command>set wait_key\n<save-entry>" "Teach bogofilter as ham and save"
+macro pager s "<enter-command>unset wait_key\n<pipe-entry>bogofilter -n\n<enter-command>set wait_key\n<save-entry>" "Teach bogofilter as ham and save"
+
+macro index r "<enter-command>unset wait_key\n<pipe-entry>bogofilter -n\n<enter-command>set wait_key\n<reply>" "Teach bogofilter as ham and reply"
+
+macro pager r "<enter-command>unset wait_key\n<pipe-entry>bogofilter -n\n<enter-command>set wait_key\n<reply>" "Teach bogofilter as ham and reply"
+#macro index g "<enter-command>unset wait_key\n<pipe-entry>bogofilter -n\n<enter-command>set wait_key\n<group-reply>" "teach bogofilter as ham and group reply"
+macro pager g "<enter-command>unset wait_key\n<pipe-entry>bogofilter -n\n<enter-command>set wait_key\n<group-reply>" "Teach bogofilter as ham and group reply"
+macro index,pager X "<enter-command>unset wait_key\n<pipe-entry>bogofilter -s\n<enter-command>set wait_key confirmappend=no\n<save-message>=Junk\n:set confirmappend=yes wait_key\n" "Teach bogofilter as spam and move to junk" 
+
+macro index,pager xs "<enter-command>unset wait_key\n<pipe-entry>bogofilter -s\n<enter-command>set wait_key\n" "Teach bogofilter as spam" 
+macro index,pager xh "<enter-command>unset wait_key\n<pipe-entry>bogofilter -n\n<enter-command>set wait_key\n" "Teach bogofilter as ham" 
+#macro pager X "<enter-command>unset wait_key\n<pipe-entry>bogofilter -s\n<enter-command>set wait_key\n<delete-message>" "teach bogofilter as spam and delete"
+
+
+## Shortcuts
+#macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/gmail<enter><change-folder>!<enter>'
+#macro index,pager <f3> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/main<enter><change-folder>!<enter>'
+#macro index,pager <f4> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/school<enter><change-folder>!<enter>'
+
+# urlview -------------------
+#
+macro pager \cb <pipe-entry>'urlview'<enter> 'Follow links with urlview'
+
+ # abook ----------------------
+ #
+ # When looking for contacts, use this command
+#set query_command= "abook --mutt-query '%s'"
+# Add current sender to address book
+#macro index,pager  A "<pipe-message>abook --add-email-quiet<return>" "Add this sender to Abook"
+#macro generic,index,pager \ca "<shell-escape>abook<return>" "launch abook"
+
+# notmuch
+ #set query_command = "notmuch address %s"
+ set query_command = "echo '' && notmuch address from:/%s/"
+ set query_format="%4c %t %-70.70a %-70.70n %?e?(%e)?"
+bind editor <Tab> complete-query
+bind editor ^T complete
+
+macro index \\  \
+"<enter-command>set my_old_pipe_decode=\$pipe_decode my_old_wait_key=\$wait_key nopipe_decode nowait_key<enter>\
+<shell-escape>notmuch-mutt -r --prompt search<enter>\
+<change-folder-readonly>`echo ${XDG_CACHE_HOME:-$HOME/.cache}/notmuch/mutt/results`<enter>\
+<enter-command>set pipe_decode=\$my_old_pipe_decode wait_key=\$my_old_wait_key<enter>" \
+"notmuch: search mail"
+
+macro index <F9> \
+"<enter-command>set my_old_pipe_decode=\$pipe_decode my_old_wait_key=\$wait_key nopipe_decode nowait_key<enter>\
+<pipe-message>notmuch-mutt -r thread<enter>\
+<change-folder-readonly>`echo ${XDG_CACHE_HOME:-$HOME/.cache}/notmuch/mutt/results`<enter>\
+<enter-command>set pipe_decode=\$my_old_pipe_decode wait_key=\$my_old_wait_key<enter>" \
+"notmuch: reconstruct thread"
+
+macro index <F6> \
+"<enter-command>set my_old_pipe_decode=\$pipe_decode my_old_wait_key=\$wait_key nopipe_decode nowait_key<enter>\
+<pipe-message>notmuch-mutt tag -- -inbox<enter>\
+<enter-command>set pipe_decode=\$my_old_pipe_decode wait_key=\$my_old_wait_key<enter>" \
+"notmuch: remove message from inbox"

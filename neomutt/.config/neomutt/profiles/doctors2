@@ -1,0 +1,22 @@
+
+
+###############
+# Identity
+#
+set real_name = "Joe Lewis"
+set from = "joelewis101@doctors.org.uk"
+
+###############
+#
+set folder = "~/Mail/doctors"
+set mbox_type = Maildir
+set spool_file = "+INBOX"
+set postponed = "+Drafts"
+set record = "+Sent"
+
+set mail_check = 60
+
+set smtp_url = "smtps://joelewis101@doctors.org.uk@mail1.doctors.org.uk:465"
+
+set smtp_pass = "`~/.config/neomutt/lpass-wrapper.sh show --password www.doctors.net.uk`"
+

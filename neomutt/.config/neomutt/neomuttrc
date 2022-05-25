@@ -1,0 +1,30 @@
+
+#source "~/.config/neomutt/profiles/lstmed"
+#folder-hook imap://joseph.lewis@lstmed.ac.uk@127.0.0.1:1143/  'source ~/.config/neomutt/profiles/lstmed ; set from="joseph.lewis@lstmed.ac.uk"'
+
+#source "~/.config/neomutt/profiles/UoL"
+#folder-hook imap://jmlewis@liverpool.ac.uk@127.0.0.1:1144/  'source ~/.config/neomutt/profiles/UoL ; set from="jmlewis@liverpool.ac.uk"'
+
+#source "~/.config/neomutt/profiles/doctors"
+#folder-hook imaps://joelewis101@doctors.org.uk@mail1.doctors.org.uk/ 'source ~/.config/neomutt/profiles/doctors ; set from="joelewis101@doctors.org.uk"'
+
+source "~/.config/neomutt/profiles/doctors2"
+folder-hook "~/Mail/doctors/*"  'source ~/.config/neomutt/profiles/doctors2 ; set from="joelewis101@doctors.org.uk"'
+
+source "~/.config/neomutt/profiles/UoL2"
+folder-hook "~/Mail/UoL/*"  'source ~/.config/neomutt/profiles/UoL2 ; set from="jmlewis@liverpool.ac.uk"'
+
+source "~/.config/neomutt/profiles/lstmed2"
+folder-hook "~/Mail/lstmed/*"  'source ~/.config/neomutt/profiles/lstmed2 ; set from="joseph.lewis@lstmed.ac.uk"'
+
+
+source ~/.config/neomutt/sidebar
+source ~/.config/neomutt/settings
+# these were initial defaults from https://gideonwolfe.com/posts/workflow/neomutt/intro/
+#source ~/.config/neomutt/colours
+source ~/.config/neomutt/colorschemes/solarized-dark
+
+source ~/.config/neomutt/bindings
+
+#macro index S "<shell-escape>mbsync -a<enter>" "run mbsync to sync mail for this account"
+macro index S "<enter-command>set wait_key\n<shell-escape>/Users/joelewis/.config/neomutt/sync_mail.sh<enter>" "run mbsync to sync mail for this account"

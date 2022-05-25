@@ -1,0 +1,78 @@
+
+
+# sidebar
+#
+# # sidebar patch config
+set sidebar_visible
+set sidebar_short_path
+#set sidebar_folder_indent
+set sidebar_width = 25
+set sidebar_divider_char = ' | '
+set sidebar_indent_string = '  
+set sidebar_format = "%D %* [%?N?%N / ?%S]"
+set mail_check_stats 
+set mail_check_stats_interval = 1
+
+# Mailboxes to show in the sidebar.
+#
+#
+
+
+named-mailboxes INBOX-lstmed "~/Mail/lstmed/INBOX"
+named-mailboxes INBOX-UoL "~/Mail/UoL/INBOX"
+named-mailboxes INBOX-doctors "~/Mail/doctors/INBOX"
+
+named-mailboxes "=========" "~/Mail/UoL/Z1"
+
+named-mailboxes Drafts-lstmed "~/Mail/lstmed/Drafts"
+named-mailboxes Drafts-UoL "~/Mail/UoL/Drafts"
+named-mailboxes Drafts-doctors "~/Mail/doctors/Drafts"
+
+named-mailboxes "========= " "~/Mail/UoL/Z2"
+
+named-mailboxes Sent-lstmed "~/Mail/lstmed/Sent"
+named-mailboxes Sent-UoL "~/Mail/UoL/Sent"
+named-mailboxes Sent-doctors "~/Mail/doctors/Sent"
+named-mailboxes "=========  " "~/Mail/UoL/Z3"
+
+named-mailboxes Archive-lstmed "~/Mail/lstmed/Archive"
+named-mailboxes Archive-UoL "~/Mail/UoL/Archive"
+named-mailboxes Archive-doctors "~/Mail/doctors/Archive"
+
+named-mailboxes "=========  " "~/Mail/UoL/Z4"
+
+named-mailboxes AA-UoL "~/Mail/UoL/AA"
+
+named-mailboxes "=========   " "~/Mail/UoL/Z5"
+
+named-mailboxes Junk-lstmed "~/Mail/lstmed/Junk"
+named-mailboxes Junk-UoL "~/Mail/UoL/Junk"
+named-mailboxes Spam-doctors "~/Mail/doctors/Spam"
+named-mailboxes Junk-doctors "~/Mail/doctors/Junk"
+
+
+#set folder = "imap://127.0.0.1:1143/"
+
+
+#named-mailboxes INBOX-lstmed "imap://joseph.lewis@lstmed.ac.uk@127.0.0.1:1143/INBOX" 
+#named-mailboxes INBOX-UoL "imap://jmlewis@liverpool.ac.uk@127.0.0.1:1144/INBOX" 
+#named-mailboxes INBOX-doctors "imaps://mail1.doctors.org.uk/INBOX"
+#named_mailboxes "========" "imaps://mail1.doctors.org.uk/[Airmail]/Done"
+ 
+#named-mailboxes DRAFTS-lstmed "imap://joseph.lewis@lstmed.ac.uk@127.0.0.1:1143/Drafts" 
+#named-mailboxes DRAFTS-UoL "imap://jmlewis@liverpool.ac.uk@127.0.0.1:1144/Drafts" 
+#named-mailboxes DRAFTS-doctors "imaps://mail1.doctors.org.uk/Drafts"
+#named_mailboxes "======== " "imaps://mail1.doctors.org.uk/[Airmail]/Memo"
+
+#named-mailboxes SENT-lstmed "imap://joseph.lewis@lstmed.ac.uk@127.0.0.1:1143/Sent"
+#named-mailboxes SENT-UoL "imap://jmlewis@liverpool.ac.uk@127.0.0.1:1144/Sent"
+#named-mailboxes SENT-Doctors "imaps://mail1.doctors.org.uk/Sent"
+
+#named-mailboxes ARCHIVE-lstmed "imap://joseph.lewis@lstmed.ac.uk@127.0.0.1:1143/Archive" 
+
+#named-mailboxes ARCHIVE-UoL "imap://jmlewis@liverpool.ac.uk@127.0.0.1:1144/Archive" 
+#named-mailboxes ARCHIVE-doctors "imaps://mail1.doctors.org.uk/Archive"
+
+
+#named-mailboxes OTHER-UoL-AA "imap://jmlewis@liverpool.ac.uk@127.0.0.1:1144/AA" 
+

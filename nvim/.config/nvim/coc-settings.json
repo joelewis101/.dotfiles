@@ -1,0 +1,14 @@
+{
+"hover.target" : "float",
+"diagnostic.displayByAle": false,
+"diagnostic.messageTarget": "echo",
+"diagnostic.format": "[%severity] %message",
+"languageserver": {
+    "R": {
+        "command": "/usr/local/bin/R",
+        "args" : [ "--slave", "-e", "languageserver::run()"],
+        "filetypes" : ["r", "rmd", "quarto"]
+    }
+  }
+}
+
