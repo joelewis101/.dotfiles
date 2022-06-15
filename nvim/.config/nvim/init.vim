@@ -29,13 +29,36 @@ Plug 'adborden/vim-notmuch-address'
 Plug 'jpalardy/vim-slime'
 Plug 'eigenfoo/stan-vim'
 Plug 'quarto-dev/quarto-vim'
-
-" vim-slime
-let g:slime_target = "tmux"
+Plug 'tpope/vim-commentary'
 
 " Initialize plugin system
 call plug#end()
 
+
+" vim-slime
+let g:slime_target = "tmux"
+let g:slime_bracketed_paste  = 1
+"let g:slime_preserve_curpos = 0
+
+" paste large text chunks to R for quarto, R, rmd
+" from https://github.com/jpalardy/vim-slime/issues/211
+function! _EscapeText_quarto(text)
+  call system("cat > ~/.slime_r", a:text)
+  return ["source('~/.slime_r', echo = TRUE, max.deparse.length = 4095)\r"]
+endfunction
+
+function! _EscapeText_r(text)
+  call system("cat > ~/.slime_r", a:text)
+  return ["source('~/.slime_r', echo = TRUE, max.deparse.length = 4095)\r"]
+endfunction
+
+function! _EscapeText_rmd(text)
+  call system("cat > ~/.slime_r", a:text)
+  return ["source('~/.slime_r', echo = TRUE, max.deparse.length = 4095)\r"]
+endfunction
+
+" vim-commentary set for  quarto
+autocmd FileType quarto setlocal commentstring=#\ %s
 " escape gets ya out of terminal
 :tnoremap <C-w> <C-\><C-n><C-w>
 
