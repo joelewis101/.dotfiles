@@ -9,6 +9,7 @@ export ZSH="/Users/joelewis/.oh-my-zsh"
 export PATH="/Users/joelewis/scripts:$PATH"
 fpath+=$HOME/.zsh/pure
 
+alias r="radian"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
