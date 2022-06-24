@@ -8,8 +8,8 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Use release branch (recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
+Plug 'josa42/vim-lightline-coc'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -42,20 +42,24 @@ let g:slime_bracketed_paste  = 1
 
 " paste large text chunks to R for quarto, R, rmd
 " from https://github.com/jpalardy/vim-slime/issues/211
-function! _EscapeText_quarto(text)
-  call system("cat > ~/.slime_r", a:text)
-  return ["source('~/.slime_r', echo = TRUE, max.deparse.length = 4095)\r"]
-endfunction
+"
+" This does *not* seem to be an issua in radian so I have
+" commented out 
+"
+" function! _EscapeText_quarto(text)
+"   call system("cat > ~/.slime_r", a:text)
+"   return ["source('~/.slime_r', echo = TRUE, max.deparse.length = 4095)\r"]
+" endfunction
 
-function! _EscapeText_r(text)
-  call system("cat > ~/.slime_r", a:text)
-  return ["source('~/.slime_r', echo = TRUE, max.deparse.length = 4095)\r"]
-endfunction
+" function! _EscapeText_r(text)
+"   call system("cat > ~/.slime_r", a:text)
+"   return ["source('~/.slime_r', echo = TRUE, max.deparse.length = 4095)\r"]
+" endfunction
 
-function! _EscapeText_rmd(text)
-  call system("cat > ~/.slime_r", a:text)
-  return ["source('~/.slime_r', echo = TRUE, max.deparse.length = 4095)\r"]
-endfunction
+" function! _EscapeText_rmd(text)
+"   call system("cat > ~/.slime_r", a:text)
+"   return ["source('~/.slime_r', echo = TRUE, max.deparse.length = 4095)\r"]
+" endfunction
 
 " vim-commentary set for  quarto
 autocmd FileType quarto setlocal commentstring=#\ %s
@@ -233,22 +237,12 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " coc stuff ends here
 "
 
-" airline show bufers
-let g:airline#extensions#tabline#enabled = 1
-
-"enable/disable coc integration  with airline
-  let g:airline#extensions#coc#enabled = 1
-
-  let g:airline#extensions#coc#show_coc_status = 1
-  let airline#extensions#coc#error_symbol = 'E:'
-  let airline#extensions#coc#warning_symbol = 'W:'
-  let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
-  let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)}'
 
 "nvim-2 indent 2 chars to shut lintr up
 
 autocmd FileType r setlocal sw=2
 autocmd FileType rmd setlocal sw=2
+autocmd FileType quarto setlocal sw=2
 
 " air-line stuff from here
 let g:airline_powerline_fonts = 1
@@ -263,6 +257,7 @@ let g:airline_powerline_fonts = 1
 set termguicolors
 
 autocmd vimenter * ++nested colorscheme gruvbox
+
 
 "some alternatives
 "set background=dark
@@ -380,3 +375,25 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
+" lightline config
+"
+"
+
+function! CocCurrentFunction()
+    return get(b:, 'coc_current_function', '')
+endfunction
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \ [  'coc_info', 'coc_hints', 'coc_errors', 'coc_warnings', 'coc_ok' ], [ 'coc_status'  ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead',
+      \ },
+      \ }
+
+" register compoments:
+call lightline#coc#register()

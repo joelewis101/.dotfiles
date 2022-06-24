@@ -3,6 +3,7 @@
 "diagnostic.displayByAle": false,
 "diagnostic.messageTarget": "echo",
 "diagnostic.format": "[%severity] %message",
+"diagnostic.checkCurrentLine": true,
 "languageserver": {
     "R": {
         "command": "/usr/local/bin/R",
