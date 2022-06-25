@@ -23,14 +23,14 @@ Plug 'tpope/vim-surround'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-pandoc/vim-pandoc-syntax'
-" rainbow parenthesis
+Plug 'vim-pandoc/vim-pandoc'
 Plug 'luochen1990/rainbow'
 Plug 'adborden/vim-notmuch-address'
 Plug 'jpalardy/vim-slime'
 Plug 'eigenfoo/stan-vim'
 Plug 'quarto-dev/quarto-vim'
 Plug 'tpope/vim-commentary'
-
+Plug 'mhinz/vim-startify'
 " Initialize plugin system
 call plug#end()
 
@@ -244,18 +244,9 @@ autocmd FileType r setlocal sw=2
 autocmd FileType rmd setlocal sw=2
 autocmd FileType quarto setlocal sw=2
 
-" air-line stuff from here
-let g:airline_powerline_fonts = 1
-
-  if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-  endif
-  let g:airline_symbols.colnr = 'c'
-
 " colorshcheme
 
 set termguicolors
-
 autocmd vimenter * ++nested colorscheme gruvbox
 
 
@@ -346,7 +337,7 @@ nmap <C-p> <Plug>MarkdownPreviewToggle
 
 nnoremap <C-t> :Files<cr>
 nnoremap <Leader>b :Buffers<cr>
-"nnoremap <C-F> :BLines<cr>
+nnoremap <C-F> :BLines<cr>
 
 " highlight current line
 "
@@ -365,8 +356,12 @@ set cursorline
 autocmd FileType mail setlocal tw=78 spell
 autocmd FileType markdown setlocal tw=78 spell
 autocmd FileType quarto setlocal tw=78 spell
+autocmd FileType pandoc setlocal tw=78 spell
 
 set cc=80
+
+" vim pandoc
+let g:pandoc#formatting#mode = "ha"
 
 " remap window moves
 
@@ -397,3 +392,25 @@ let g:lightline = {
 
 " register compoments:
 call lightline#coc#register()
+
+" startify
+"
+ let g:startify_custom_header =
+       \ startify#pad(split(system('figlet -w 100 NEOVIM'), '\n'))
+
+
+    let g:startify_lists = [
+          \ { 'type': 'files',     'header': ['   MRU']            },
+          \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+          \ { 'type': 'sessions',  'header': ['   Sessions']       },
+          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+          \ { 'type': 'commands',  'header': ['   Commands']       },
+          \ ]
+
+
+let g:startify_files_number = 6
+
+
+    let g:startify_bookmarks = [ {'c': '~/.config/nvim/init.vim'},
+                            \ {'z': '~/.zshrc'},
+                            \{'t': '~/.tmux.conf'} ]
