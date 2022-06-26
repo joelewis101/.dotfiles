@@ -10,7 +10,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
 Plug 'josa42/vim-lightline-coc'
-Plug 'preservim/nerdtree'
+"Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'phanviet/vim-monokai-pro'
@@ -31,6 +31,7 @@ Plug 'eigenfoo/stan-vim'
 Plug 'quarto-dev/quarto-vim'
 Plug 'tpope/vim-commentary'
 Plug 'mhinz/vim-startify'
+Plug 'tpope/vim-vinegar'
 " Initialize plugin system
 call plug#end()
 
@@ -337,7 +338,7 @@ nmap <C-p> <Plug>MarkdownPreviewToggle
 
 nnoremap <C-t> :Files<cr>
 nnoremap <Leader>b :Buffers<cr>
-nnoremap <C-F> :BLines<cr>
+" nnoremap <C-F> :BLines<cr>
 
 " highlight current line
 "
