@@ -41,10 +41,6 @@ named-mailboxes Archive-doctors "~/Mail/doctors/Archive"
 
 named-mailboxes "=========  " "~/Mail/UoL/Z4"
 
-named-mailboxes AA-UoL "~/Mail/UoL/AA"
-
-named-mailboxes "=========   " "~/Mail/UoL/Z5"
-
 named-mailboxes Junk-lstmed "~/Mail/lstmed/Junk"
 named-mailboxes Junk-UoL "~/Mail/UoL/Junk"
 named-mailboxes Spam-doctors "~/Mail/doctors/Spam"

@@ -50,7 +50,7 @@ set edit_headers
 # set editor = "emacsclient -a emacs -t"
 # set editor = "vim"
 
-set mime_type_query_command = "xdg-mime query filetype"
+set mime_type_query_command = "file --mime-type -b"
 
 # msmtp is a solid SMTP client.
 # neomutt also has built-in SMTP, or you can use an MTA like exim4 or postfix.

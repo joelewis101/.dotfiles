@@ -36,6 +36,10 @@ bind index,pager \Cp sidebar-prev-new
 bind index,pager \Cn sidebar-next-new
 bind index,pager B sidebar-toggle-visible
 
+macro index,pager <F1> <change-folder>"~/Mail/lstmed/INBOX"<enter>"
+macro index,pager <F2> <change-folder>"~/Mail/UoL/INBOX"<enter>"
+macro index,pager <F3> <change-folder>"~/Mail/doctors/INBOX"<enter>"
+
 # global index and pager shortcuts
 bind index,pager @ compose-to-sender
 bind index,pager D purge-message
@@ -55,8 +59,8 @@ macro index,pager A ":set confirmappend=no delete=yes\n<tag-prefix><save-message
     #"add the sender email address to khard"
 
 
-macro index s "<enter-command>unset wait_key\n<pipe-entry>bogofilter -n\n<enter-command>set wait_key\n<save-entry>" "Teach bogofilter as ham and save"
-macro pager s "<enter-command>unset wait_key\n<pipe-entry>bogofilter -n\n<enter-command>set wait_key\n<save-entry>" "Teach bogofilter as ham and save"
+#macro index s "<enter-command>unset wait_key\n<pipe-entry>bogofilter -n\n<enter-command>set wait_key\n<save-entry>" "Teach bogofilter as ham and save"
+#macro pager s "<enter-command>unset wait_key\n<pipe-entry>bogofilter -n\n<enter-command>set wait_key\n<save-entry>" "Teach bogofilter as ham and save"
 
 macro index r "<enter-command>unset wait_key\n<pipe-entry>bogofilter -n\n<enter-command>set wait_key\n<reply>" "Teach bogofilter as ham and reply"
 
