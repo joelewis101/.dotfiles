@@ -24,6 +24,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-rmarkdown'
 Plug 'luochen1990/rainbow'
 Plug 'adborden/vim-notmuch-address'
 Plug 'jpalardy/vim-slime'
@@ -265,6 +266,7 @@ autocmd vimenter * ++nested colorscheme gruvbox
 "to alt-M on mac
 "
 autocmd FileType r inoremap <buffer> ˜ <Esc>:normal! a%>%<CR>a
+autocmd FileType rmd inoremap <buffer> ˜ <Esc>:normal! a%>%<CR>a
 autocmd FileType rnoweb inoremap <buffer> ˜ <Esc>:normal! a%>%<CR>a
 autocmd FileType quarto inoremap <buffer> ˜ <Esc>:normal! a%>%<CR>a
 "autocmd FileType rnoweb inoremap <buffer> Â <Esc>:normal! a%>%<CR>a
