@@ -1,5 +1,6 @@
 text/html; ~/.config/neomutt/view_attachment.sh %s "html" 
 text/html; w3m -I %{charset} -T text/html -dump; copiousoutput;
+text/plain; nvim %s 
 
 # Images
 image/jpeg; ~/.config/neomutt/view_attachment.sh %s
@@ -13,3 +14,5 @@ application/pdf; ~/.config/neomutt/view_attachment.sh %s pdf
 application/vnd.openxmlformats-officedocument.wordprocessingml.document; open %s
 application/vnd.openxmlformats-officedocument.presentationml.presentation; open %s
 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; open %s
+
+application/msword; open %s
