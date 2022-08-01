@@ -21,7 +21,8 @@ set mail_check_stats_interval = 1
 named-mailboxes INBOX-lstmed "~/Mail/lstmed/INBOX"
 named-mailboxes INBOX-UoL "~/Mail/UoL/INBOX"
 named-mailboxes INBOX-doctors "~/Mail/doctors/INBOX"
-
+named-mailboxes "=========" "~/Mail/UoL/Z5"
+named-mailboxes Searches "~/.cache/notmuch/mutt/results"
 named-mailboxes "=========" "~/Mail/UoL/Z1"
 
 named-mailboxes Drafts-lstmed "~/Mail/lstmed/Drafts"

@@ -1,5 +1,7 @@
 # vim: filetype=muttrc
 
+# solarized_dark colorscheme with a couple of changes by joe
+# that specifically use the belafonte night colors from iterm2
 #
 #
 # make sure that you are using mutt linked against slang, not ncurses, or
@@ -7,7 +9,7 @@
 
 # custom body highlights -----------------------------------------------
 # highlight my name and other personally relevant strings
-color body          color136        default        "(dominique|orban)"
+#color body          color136        default        "(dominique|orban)"
 # custom index highlights ----------------------------------------------
 # messages which mention my name in the body
 #color index         color136        color234        "~b \"phil(_g|\!| gregory| gold)|pgregory\" !~N !~T !~F !~p !~P"
@@ -44,7 +46,7 @@ mono  error         bold
 
 # index ----------------------------------------------------------------
 
-color index         color160        default       "~D(!~p|~p)"               # deleted
+#color index         color160        default       "~D(!~p|~p)"               # deleted
 color index         color235        default       ~F                         # flagged
 color index         color166        default       ~=                         # duplicate messages
 color index         color240        default       "~A!~N!~T!~p!~Q!~F!~D!~P"  # the rest
@@ -55,7 +57,7 @@ color index         color33         default       "~N"                        # 
 color index         color33         default       "~O"                        # old messages
 color index         color61         default       "~Q"                        # messages that have been replied to
 color index         color240        default       "~R"                        # read messages
-color index         color33         default       "~U"                        # unread messages
+color index         color4         default       "~U"                        # unread messages
 color index         color33         default       "~U~$"                      # unread, unreferenced messages
 color index         color241        default       "~v"                        # messages part of a collapsed thread
 color index         color241        default       "~P"                        # messages from me
@@ -68,7 +70,6 @@ color index         color160        default       "~F~p"                      # 
 color index         color160        default       "~N~F"                      # new flagged messages
 color index         color160        default       "~N~F~p"                    # new flagged messages to me
 color index         color160        default       "~U~F~p"                    # new flagged messages to me
-color index         color235        color160        "~D"                        # deleted messages
 color index         color245        default       "~v~(!~N)"                  # collapsed thread with no unread
 color index         color136        default       "~v~(~N)"                   # collapsed thread with some unread
 color index         color64         default       "~N~v~(~N)"                 # collapsed thread with unread parent
@@ -82,9 +83,10 @@ color index         color37         color235        "~v~(~p)"                   
 color index         color136        color160        "~v~(~D)"                   # thread with deleted (doesn't differentiate between all or partial)
 #color index         color136        color234        "~(~N)"                    # messages in threads with some unread
 #color index         color64         color234        "~S"                       # superseded messages
-#color index         color160        color234        "~T"                       # tagged messages
+color index          color6        default           "~T"                       # tagged messages
 #color index         color166        color160        "~="                       # duplicated messages
-
+color index          color5          default    "~sBogon" 
+color index         color1          default        "~D"                        # deleted messages
 # message headers ------------------------------------------------------
 
 color header        color240        default       "^"
@@ -148,3 +150,8 @@ color body          color33         default       "( *[-+=#*~_]){6,}"
 #folder-hook .                  "color status        J_black         J_status        "
 #folder-hook gmail/inbox        "color status        J_black         color136        "
 #folder-hook gmail/important    "color status        J_black         color136        "
+#
+#
+# sidebar ----------------------------------------------
+
+color sidebar_highlight   color241    color235

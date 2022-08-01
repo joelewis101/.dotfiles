@@ -16,3 +16,6 @@ application/vnd.openxmlformats-officedocument.presentationml.presentation; open 
 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; open %s
 
 application/msword; open %s
+
+text/calendar;      vkhal -s %s; copiousoutput;
+application/ics;    vkhal -s %s; copiousoutput;
