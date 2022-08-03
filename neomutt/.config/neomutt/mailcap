@@ -1,6 +1,7 @@
 text/html; ~/.config/neomutt/view_attachment.sh %s "html" 
 text/html; w3m -I %{charset} -T text/html -dump; copiousoutput;
-text/plain; nvim %s 
+#text/plain; nvim %s 
+text/plain ; cat; copiousoutput;
 
 # Images
 image/jpeg; ~/.config/neomutt/view_attachment.sh %s
@@ -17,5 +18,5 @@ application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; open %s
 
 application/msword; open %s
 
-text/calendar;      vkhal -s %s; copiousoutput;
-application/ics;    vkhal -s %s; copiousoutput;
+text/calendar;      ~/.config/neomutt/khal-print-ics.sh %s; copiousoutput;
+application/ics;    ~/.config/neomutt/khal-print-ics.sh %s; copiousoutput;

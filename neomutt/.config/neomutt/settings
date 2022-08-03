@@ -18,20 +18,11 @@ set mailcap_path = "~/.config/neomutt/mailcap"
 # Tells Mutt to automatically view files with these mime types
 auto_view text/html text/calendar
 # Order to try and show multipart emails
-alternative_order text/calendar text/plain text/enriched text/html
-
+alternative_order text/calendar text/plain  text/enriched text/html
 set attach_save_dir = "~/Downloads"
-# Prefer plain text to html.
-# However, for brain dead clients that bundle attachments inside a
-# multipart/alternative, prefer that alternative.
-#alternative_order multipart/mixed multipart/related text/plain
 
-# Consult mime.types for determining types of these attachments
-#mime_lookup application/octet-stream
-
-# This requires a ~/.mailcap entry with the copiousoutput flag, such as:
+# alternative
 # text/html; lynx -dump -width ${COLUMNS:-80} %s; nametemplate=%s.html; copiousoutput
-#auto_view text/html
 
 ###############
 # Index settings
@@ -47,36 +38,9 @@ set header_cache= "~/.neomutt/hcache"
 #
 set edit_headers
 
-# set editor = "emacsclient -a emacs -t"
-# set editor = "vim"
-
 set mime_type_query_command = "file --mime-type -b"
-
-# msmtp is a solid SMTP client.
-# neomutt also has built-in SMTP, or you can use an MTA like exim4 or postfix.
-set sendmail = "/usr/bin/msmtp"
-
-# lbdb is a versatile contact query tool.
-# Invoke via ctrl-t in an address prompt
-set query_command = "/usr/bin/lbdbq"
-
-###############
-# GnuPG
-#
-unset crypt_use_gpgme
-#source /usr/local/share/doc/neomutt/samples/gpg.rc
-set pgp_default_key = "0x1234567890ABCDEF"
-set crypt_opportunistic_encrypt
-set postpone_encrypt
-
-
 # set editor to neovim
 set editor = "nvim '+/^$/' '+nohl'"
-
-
-# Set preffered view modes
-#auto_view text/html text/calendar application/ics # view html automatically
-#alternative_order text/html text/plain text/enriched text/*
 
 
 # main options
