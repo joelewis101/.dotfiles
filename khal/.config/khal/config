@@ -35,7 +35,7 @@ timeformat = %H:%M
 longdateformat = %d-%b-%Y
 dateformat = %d-%m-%y
 datetimeformat = %Y-%m-%d %H:%M
-longdatetimeformat = %Y-%m-%d %H:%M
+longdatetimeformat = %H:%M %d-%b-%Y
 
 
 [default]
