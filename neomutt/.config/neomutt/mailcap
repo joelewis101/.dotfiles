@@ -4,7 +4,8 @@ text/html; w3m -I %{charset} -T text/html -dump; copiousoutput;
 text/plain ; cat; copiousoutput;
 
 # Images
-image/jpeg; ~/.config/neomutt/view_attachment.sh %s
+#image/jpeg; ~/.config/neomutt/view_attachment.sh %s
+image/jpeg; open %s
 image/pjpeg; ~/.config/neomutt/view_attachment.sh %s
 image/png; open %s
 image/gif; ~/.config/neomutt/view_attachment.sh %s
