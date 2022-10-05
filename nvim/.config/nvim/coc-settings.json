@@ -10,6 +10,10 @@
         "args" : [ "--slave", "-e", "languageserver::run()"],
         "filetypes" : ["r", "rmd", "rmarkdown", "quarto"]
     }
-  }
+  },
+"snippets.extends": {
+        "rmarkdown": ["r"]
 }
+}
+
 
