@@ -80,11 +80,14 @@ title: ${1:title}
 author: ${2:"Joe Lewis"}
 date: ${3:"\`r format(Sys.time(), '%d %B, %Y')\`"}
 format:
-  pdf: default
-    toc: true
-    number-sections: true
-  html:
-    code-fold: true
+ pdf: 
+  toc: true
+  number-sections: true
+  link-citations: true
+ html:
+  code-fold: true
+bibliography: ${4:/Users/joelewis/Zotero/my_library.bib}
+csl: ${5:/Users/joelewis/Zotero/bmj.csl}
 ---
 endsnippet
 

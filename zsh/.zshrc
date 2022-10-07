@@ -7,6 +7,7 @@ export PATH=$(brew --prefix)/bin:$PATH
 export ZSH="/Users/joelewis/.oh-my-zsh"
 # joes scripts
 export PATH="/Users/joelewis/scripts:$PATH"
+export PATH="/Users/joelewis/go/bin:$PATH"
 fpath+=$HOME/.zsh/pure
 
 alias r="radian"
