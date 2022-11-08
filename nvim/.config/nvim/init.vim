@@ -33,7 +33,8 @@ Plug 'eigenfoo/stan-vim'
 Plug 'quarto-dev/quarto-vim'
 Plug 'tpope/vim-commentary'
 Plug 'mhinz/vim-startify'
-Plug 'tpope/vim-vinegar'
+"Plug 'tpope/vim-vinegar'
+Plug 'junegunn/goyo.vim'
 " Initialize plugin system
 call plug#end()
 
@@ -237,6 +238,10 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
+" toggle coc diagnostic
+
+nmap <leader>d :call CocAction('diagnosticToggle')
+
 " coc stuff ends here
 "
 " This is from coc-snippets
@@ -402,6 +407,8 @@ set cc=80
 
 " vim pandoc
 let g:pandoc#formatting#mode = "ha"
+let g:pandoc#modules#disabled = ["folding"]
+
 
 " remap window moves
 
@@ -496,3 +503,12 @@ inoremap <silent> @@ <c-g>u<c-o>:call fzf#run({
                         \ 'sink*': function('<sid>bibtex_cite_sink_insert'),
                         \ 'window': {'width': 0.9, 'height': 0.6} ,
                         \ 'options': '--ansi --layout=reverse-list --multi --prompt "Cite> "'})<CR>
+
+" add netrw config
+
+let g:netrw_banner = 0
+"let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+nmap <leader> e :Vexplore<CR>
