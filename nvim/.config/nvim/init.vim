@@ -11,7 +11,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-snippets'
 Plug 'itchyny/lightline.vim'
 Plug 'josa42/vim-lightline-coc'
-"Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'phanviet/vim-monokai-pro'
@@ -33,7 +32,7 @@ Plug 'eigenfoo/stan-vim'
 Plug 'quarto-dev/quarto-vim'
 Plug 'tpope/vim-commentary'
 Plug 'mhinz/vim-startify'
-"Plug 'tpope/vim-vinegar'
+Plug 'jeetsukumaran/vim-filebeagle'
 Plug 'junegunn/goyo.vim'
 " Initialize plugin system
 call plug#end()
@@ -504,11 +503,8 @@ inoremap <silent> @@ <c-g>u<c-o>:call fzf#run({
                         \ 'window': {'width': 0.9, 'height': 0.6} ,
                         \ 'options': '--ansi --layout=reverse-list --multi --prompt "Cite> "'})<CR>
 
-" add netrw config
+" filebeagle
+let g:filebeagle_suppress_keymaps = 1 
+map <silent> <Leader>f <Plug>FileBeagleOpenCurrentWorkingDir 
+" map <silent> - <Plug>FileBeagleOpenCurrentBufferDir
 
-let g:netrw_banner = 0
-"let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
-nmap <leader> e :Vexplore<CR>
