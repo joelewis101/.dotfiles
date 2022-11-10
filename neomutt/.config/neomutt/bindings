@@ -51,7 +51,8 @@ bind editor <Tab> complete-query
 bind editor ^T complete
 
 # archive with A
-macro index,pager A ":set confirmappend=no delete=yes\n<tag-prefix><save-message>=archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n" "Archive message (euther current or tagged)"
+macro index A "<enter-command>set confirmappend=no delete=yes\n<tag-prefix><save-message>=archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n" "Archive message (euther current or tagged)"
+macro pager A "<enter-command> unset wait_key\n<save-message>=archive\n<enter-command>set wait_key\n" "Archive current message from pager"
 
 # Press A to add contact to Khard address book
 #macro index,pager A \
