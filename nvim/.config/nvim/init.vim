@@ -459,7 +459,8 @@ let g:startify_files_number = 6
 
 let g:startify_bookmarks = [ {'c': '~/.config/nvim/init.vim'},
                             \ {'z': '~/.zshrc'},
-                            \{'t': '~/.tmux.conf'} ]
+                            \{'t': '~/.tmux.conf'},
+                            \{'s': '~/.config/coc/ultisnips'}]
 
 "  from fzf-bibtext
 "
@@ -505,6 +506,6 @@ inoremap <silent> @@ <c-g>u<c-o>:call fzf#run({
 
 " filebeagle
 let g:filebeagle_suppress_keymaps = 1 
-map <silent> <Leader>f <Plug>FileBeagleOpenCurrentWorkingDir 
+map <silent> <Leader>t <Plug>FileBeagleOpenCurrentWorkingDir 
 " map <silent> - <Plug>FileBeagleOpenCurrentBufferDir
 
