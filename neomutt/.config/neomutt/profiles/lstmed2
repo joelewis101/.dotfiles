@@ -17,7 +17,9 @@ set mail_check = 60
 
 set smtp_url = "smtp://joseph.lewis@lstmed.ac.uk@localhost:1025/"
 
-set smtp_pass = "`/usr/local/bin/op item get lstmed.ac.uk --fields label=password`"
+# set smtp_pass = "`/usr/local/bin/op item get lstmed.ac.uk --fields label=password`"
+
+set smtp_pass = "`/opt/homebrew/bin/gpg -q -r joelewis101@doctors.org.uk -d ~/.config/neomutt/lstmed_pwd.txt.gpg`"
 
 set ssl_force_tls = no
 set ssl_starttls = no

@@ -20,4 +20,7 @@ set smtp_url = "smtps://joelewis101@doctors.org.uk@mail1.doctors.org.uk:465"
 
 #set smtp_pass = "`~/.config/neomutt/lpass-wrapper.sh show --password www.doctors.net.uk`"
 
-set smtp_pass = "`/usr/local/bin/op item get doctors.org.uk --fields label=password`"
+# set smtp_pass = "`/usr/local/bin/op item get doctors.org.uk --fields label=password`"
+#
+#
+set smtp_pass = "`/opt/homebrew/bin/gpg -q -r joelewis101@doctors.org.uk -d ~/.config/neomutt/doctors_pwd.txt.gpg`"
