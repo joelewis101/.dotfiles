@@ -34,6 +34,7 @@ Plug 'tpope/vim-commentary'
 Plug 'mhinz/vim-startify'
 Plug 'jeetsukumaran/vim-filebeagle'
 Plug 'junegunn/goyo.vim'
+Plug 'mbbill/undotree'
 " Initialize plugin system
 call plug#end()
 
@@ -124,7 +125,7 @@ endif
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use `[g` and `]g` to navigate diagnostics
@@ -508,4 +509,12 @@ inoremap <silent> @@ <c-g>u<c-o>:call fzf#run({
 let g:filebeagle_suppress_keymaps = 1 
 map <silent> <Leader>t <Plug>FileBeagleOpenCurrentWorkingDir 
 " map <silent> - <Plug>FileBeagleOpenCurrentBufferDir
+
+" undo tree shortcut F5
+"
+nnoremap <F5> :UndotreeToggle<CR>
+
+" few pandoc bits - show bold, disable all mappings
+let g:pandoc#syntax#style#emphases = 1
+let g:pandoc#keyboard#use_default_mappings = 0
 

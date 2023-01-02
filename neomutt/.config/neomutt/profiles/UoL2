@@ -22,6 +22,7 @@ set mail_check = 60
 
 set smtp_url = "smtp://jmlewis@liverpool.ac.uk@localhost:1026/"
 
+set smtp_pass = "`/usr/local/bin/op item get oaluk6fksfet3mi37jzff5ls3q --fields label=password`"
 set ssl_force_tls = no
 set ssl_starttls = no
 
