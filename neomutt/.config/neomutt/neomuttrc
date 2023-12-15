@@ -22,7 +22,8 @@ source ~/.config/neomutt/sidebar
 source ~/.config/neomutt/settings
 # these were initial defaults from https://gideonwolfe.com/posts/workflow/neomutt/intro/
 #source ~/.config/neomutt/colours
-source ~/.config/neomutt/colorschemes/solarized-dark2
+#source ~/.config/neomutt/colorschemes/solarized-dark2
+source ~/.config/neomutt/colorschemes/catpuccin.muttrc2
 
 source ~/.config/neomutt/bindings
 

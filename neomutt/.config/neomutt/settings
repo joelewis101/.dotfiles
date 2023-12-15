@@ -4,11 +4,14 @@
 # Pager settings
 #
 ignore *
-unignore From Message-ID Date To Cc Bcc Subject
+unignore From Date To Cc Bcc Subject
 
 set pager_stop
+# When set, the internal-pager will not move to the next message when you are at
+# the end of a message and invoke the next-page function.
 unset markers
-
+# Controls the display of wrapped lines in the internal pager. If set, a “+”
+# marker is displayed at the beginning of wrapped lines. 
 
 # attachments
 
@@ -19,7 +22,7 @@ set mailcap_path = "~/.config/neomutt/mailcap"
 auto_view text/html text/calendar
 # Order to try and show multipart emails
 alternative_order text/calendar text/plain  text/enriched text/html
-set attach_save_dir = "~/Downloads"
+set attach_save_dir = "~/Downloads/neomutt"
 
 # alternative
 # text/html; lynx -dump -width ${COLUMNS:-80} %s; nametemplate=%s.html; copiousoutput
@@ -60,9 +63,11 @@ set text_flowed
 unset sig_dashes                     # no dashes before sig
 unset mime_forward                   # forward attachments as part of body
 unset help                           # No help bar at the top of index
-# set status_on_top                    # Status bar on top of index
+#set status_on_top                    # Status bar on top of index
 set tmpdir = ~/Programs/neomutt/temp # where to keep temp files
-unset wait_key
+unset wait_key                       # Controls whether Mutt will ask you to
+   				     #press a key after shell- escape, pipe-message, pipe-entry, print-message, and
+ 				     #print-entry commands.
 
 
 unset confirmappend      # don't ask, just do!

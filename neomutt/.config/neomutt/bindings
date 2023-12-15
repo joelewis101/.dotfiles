@@ -27,13 +27,15 @@ bind index,pager R group-reply
 bind editor <Tab> complete-query
 bind index,pager x noop
 
+unbind index,pager p
+
 # sidebar mappings
-bind index,pager \Ck sidebar-prev
-bind index,pager \Cj sidebar-next
+#bind index,pager \Ck sidebar-prev
+#bind index,pager \Cj sidebar-next
 bind index,pager \Co sidebar-open
-bind index,pager \Cl sidebar-open
-bind index,pager \Cp sidebar-prev-new
-bind index,pager \Cn sidebar-next-new
+#bind index,pager \Cl sidebar-open
+bind index,pager \Cp sidebar-prev
+bind index,pager \Cn sidebar-next
 bind index,pager B sidebar-toggle-visible
 
 macro index,pager <F1> <change-folder>"~/Mail/lstmed/INBOX"<enter>"
@@ -82,7 +84,11 @@ macro index,pager xh "<enter-command>unset wait_key\n<pipe-entry>bogofilter -n\n
 
 # urlview -------------------
 #
-macro pager \cb <pipe-entry>'urlview'<enter> 'Follow links with urlview'
+# macro pager \cb <pipe-entry>'urlview'<enter> 'Follow links with urlview'
+#
+macro index,pager \cb "<pipe-message> urlscan -cd<Enter>" "call urlscan to extract URLs out of a message"
+
+macro attach,compose \cb "<pipe-entry> urlscan -cd<Enter>" "call urlscan to extract URLs out of a message"
 
  # abook ----------------------
  #
@@ -123,5 +129,5 @@ macro index <F6> \
 unbind editor <space>
 
 # List files in directory with selected ext with fzf and send them to compose attachment, use tab to select multiple files in fzf
-macro compose \Ca ":source ~/.config/neomutt/fzfattach.sh|<enter>" \
+macro compose A ":source ~/.config/neomutt/fzfattach.sh|<enter>" \
 "Use fzf to search for attachments; tab to multiple select"

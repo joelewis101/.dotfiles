@@ -1,0 +1,94 @@
+# vim: filetype=muttrc
+
+# basic colors ---------------------------------------------------------
+color normal        default        default       
+color status        white        black        
+color indicator     white        black        
+
+# basic monocolor screen
+mono  bold          bold
+mono  underline     underline
+mono  indicator     reverse
+mono  error         bold
+
+# index ----------------------------------------------------------------
+
+color index         default        default       "~A!~N!~T!~p!~Q!~F!~D!~P"  # the rest
+color index         magenta         default       "~N"                        # new messages
+color index         default        default       "~R"                        # read messages
+color index         magenta         default       "~U"                        # unread messages
+color index         blue        default       "~F"                        # flagged messages
+color index          white       default           "~T"                       # tagged messages
+color index         red        default       "~D(!~p|~p)"               # deleted
+
+# message headers ------------------------------------------------------
+
+color header        default        default       
+# color hdrdefault    white        default       
+# color header        white     black               "^(From)"
+color header        white     black       "^(Subject)"
+
+# body -----------------------------------------------------------------
+
+# color body          white         default
+color quoted        blue         default       
+color quoted1       green         default       
+color quoted2       magenta        default       
+color quoted3       magenta        default       
+color quoted4       magenta        default       
+
+# color signature     color240        default       
+# color bold          color235        default       
+# color underline     color235        default       
+color normal        color246        default       
+# #
+# #
+# color body          color245        default       "[;:][-o][)/(|]"    # emoticons
+# color body          color245        default       "[;:][)(|]"         # emoticons
+# color body          color245        default       "[*]?((N)?ACK|CU|LOL|SCNR|BRB|BTW|CWYL|\
+#                                                      |FWIW|vbg|GD&R|HTH|HTHBE|IMHO|IMNSHO|\
+#                                                      |IRL|RTFM|ROTFL|ROFL|YMMV)[*]?"
+# color body          color245        default       "[ ][*][^*]*[*][ ]?" # more emoticon?
+# color body          color245        default       "[ ]?[*][^*]*[*][ ]" # more emoticon?
+
+
+# yes, an insance URL regex
+color body          white        default        "([a-z][a-z0-9+-]*://(((([a-z0-9_.!~*'();:&=+$,-]|%[0-9a-f][0-9a-f])*@)?((([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?|[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)(:[0-9]+)?)|([a-z0-9_.!~*'()$,;:@&=+-]|%[0-9a-f][0-9a-f])+)(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?(#([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?|(www|ftp)\\.(([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?(:[0-9]+)?(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?(#([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?)[^].,:;!)? \t\r\n<>\"](7d)?"
+
+# i added the 7d here as teams links always seem to end it 7d and it was being
+# missed off
+# Horrible hack!
+
+# # and a heavy handed email regex
+# #color body          J_magent        color234        "((@(([0-9a-z-]+\\.)*[0-9a-z-]+\\.?|#[0-9]+|\\[[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\]),)*@(([0-9a-z-]+\\.)*[0-9a-z-]+\\.?|#[0-9]+|\\[[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\]):)?[0-9a-z_.+%$-]+@(([0-9a-z-]+\\.)*[0-9a-z-]+\\.?|#[0-9]+|\\[[0-2]?[0-9]?[0-9]\\.[0-2]?[0-9]?[0-9]\\.[0-2]?[0-9]?[0-9]\\.[0-2]?[0-9]?[0-9]\\])"
+#
+ # Various smilies and the like
+# color body          color230        default       "<[Gg]>"                            # <g>
+# color body          color230        default       "<[Bb][Gg]>"                        # <bg>
+# color body          color136        default       " [;:]-*[})>{(<|]"                  # :-) etc...
+# # *bold*
+# color body          color33         default       "(^|[[:space:][:punct:]])\\*[^*]+\\*([[:space:][:punct:]]|$)"
+# mono  body          bold                            "(^|[[:space:][:punct:]])\\*[^*]+\\*([[:space:][:punct:]]|$)"
+# # _underline_
+# color body          color33         default       "(^|[[:space:][:punct:]])_[^_]+_([[:space:][:punct:]]|$)"
+# mono  body          underline                       "(^|[[:space:][:punct:]])_[^_]+_([[:space:][:punct:]]|$)"
+# # /italic/  (Sometimes gets directory names)
+# color body         color33         default       "(^|[[:space:][:punct:]])/[^/]+/([[:space:][:punct:]]|$)"
+# mono body          underline                       "(^|[[:space:][:punct:]])/[^/]+/([[:space:][:punct:]]|$)"
+#
+# Border lines.
+color body          white         default       "( *[-+=#*~_]){6,}"
+
+# attachment text
+#
+color attach_headers           color241            default      "."
+
+#
+#
+# sidebar ----------------------------------------------
+
+color sidebar_highlight   cyan    color235
+color sidebar_background color246 default
+color sidebar_new magenta default
+
+
