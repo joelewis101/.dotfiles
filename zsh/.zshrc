@@ -11,6 +11,8 @@ export PATH="/Users/joelewis/go/bin:$PATH"
 fpath+=$HOME/.zsh/pure
 
 alias r="radian"
+alias mux="tmuxinator"
+export EDITOR=nvim
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -139,3 +141,22 @@ DEFAULT_USER="joelewis"
 
 # fix <C-o> mutt
 stty discard undef
+
+# make sure us brew installed java
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/joelewis/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/joelewis/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/joelewis/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/joelewis/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
