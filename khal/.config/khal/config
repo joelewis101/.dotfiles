@@ -17,12 +17,12 @@
 
 [[uol]]
   path = ~/.calendar/uol/calendar
-  color = dark blue
+  color = dark cyan
   priority = 1
 
 [[lstmed]]
   path = ~/.calendar/lstmed/calendar
-  color = dark blue
+  color = dark cyan
   priority = 1
 
 [[public holidays]]
@@ -40,6 +40,7 @@ longdatetimeformat = %H:%M %d-%b-%Y
 
 [default]
 highlight_event_days = True
+default_calendar = google
 
 [view]
 frame = width
