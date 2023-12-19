@@ -14,8 +14,11 @@ return {
         -- highlight = { "Function", "Label" },
         -- smart_indent_cap = true,
         -- priority = 2
+      },
+        exclude = {
+        filetypes = {"dashboard", "mail"}
       }
-    },
+      }
   },
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} }
