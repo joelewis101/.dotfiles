@@ -6,11 +6,9 @@ IMAPAccount lstmed
 Host 127.0.0.1
 port 1143
 User joseph.lewis@lstmed.ac.uk
-# PassCmd "/usr/local/bin/op item get lstmed.ac.uk --fields label=password"
 PassCmd "/opt/homebrew/bin/gpg -q -r joelewis101@doctors.org.uk -d ~/.config/neomutt/lstmed_pwd.txt.gpg"
 SSLType None
 AuthMechs LOGIN
-#PipelineDepth 1
 Timeout 0
 
 
@@ -43,11 +41,9 @@ IMAPAccount UoL
 Host 127.0.0.1
 port 1144
 User jmlewis@liverpool.ac.uk
-# PassCmd "/usr/local/bin/op item get oaluk6fksfet3mi37jzff5ls3q --fields label=password" 
 PassCmd "/opt/homebrew/bin/gpg -q -r joelewis101@doctors.org.uk -d ~/.config/neomutt/uol_pwd.txt.gpg"
 SSLType None
 AuthMechs LOGIN
-#PipelineDepth 1
 Timeout 0
 
 
@@ -81,8 +77,6 @@ IMAPAccount doctors
 Host mail1.doctors.org.uk
 port 993
 User joelewis101@doctors.org.uk
-# PassCmd "~/.config/neomutt/lpass-wrapper.sh show --password www.doctors.net.uk"
-# PassCmd "op item get doctors.org.uk --fields label=password"
 PassCmd "/opt/homebrew/bin/gpg -q -r joelewis101@doctors.org.uk -d ~/.config/neomutt/doctors_pwd.txt.gpg"
 SSLType IMAPS
 AuthMechs LOGIN
