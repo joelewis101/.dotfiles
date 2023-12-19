@@ -44,8 +44,6 @@ imap(";", ";<c-g>u")
 
 nmap('Q', '<Nop>')
 
-
-
 imap("µ", "%>%")
 imap("˜", "|>")
 -- send code with ctrl+Enter
@@ -60,7 +58,6 @@ imap("˜", "|>")
 
 -- send code with Enter and leader Enter
 vmap('<cr>', '<Plug>SlimeRegionSend')
-
 
 -- keep selection after indent/dedent
 vmap('>', '>gv')
@@ -82,7 +79,6 @@ vmap("<leader>d", "\"_d")
 nmap('n', "nzz")
 nmap('<c-d>', '<c-d>zz')
 nmap('<c-u>', '<c-u>zz')
-
 
 local function toggle_light_dark_theme()
   if vim.o.background == 'light' then
@@ -137,7 +133,7 @@ wk.register(
       e = { ":lua require'otter'.export()<cr>", 'otter export' },
       E = { ":lua require'otter'.export(true)<cr>", 'otter export overwrite' },
     },
-    e = { "<cmd>:Neotree<cr>", "explore filetree"}, 
+    e = { "<cmd>:Oil<cr>", "explore filetree"}, 
     f = {
       name = 'find (telescope)',
       f = { '<cmd>Telescope find_files<cr>', 'files' },
@@ -170,7 +166,7 @@ wk.register(
       n = { ']s', 'next' },
       p = { '[s', 'previous' },
       g = { 'zg', 'good' },
-      r = { 'zg', 'rigth' },
+      r = { 'zg', 'right' },
       w = { 'zw', 'wrong' },
       b = { 'zw', 'bad' },
       ['?'] = { '<cmd>Telescope spell_suggest<cr>', 'suggest' },
@@ -202,15 +198,8 @@ wk.register(
 -- normal mode
 wk.register({
   ['<c-LeftMouse>'] = { '<cmd>lua vim.lsp.buf.definition()<CR>', 'go to definition' },
-  ["<c-q>"]         = { '<cmd>q<cr>', 'close buffer' },
+  ["<c-e>"]         = { '<cmd>:Oil<cr>', 'explore filetree'},
   ['<esc>']         = { '<cmd>noh<cr>', 'remove search highlight' },
-  ['n']             = { 'nzzzv', 'center search' },
-  ['gN']            = { 'Nzzzv', 'center search' },
-  ['gl']            = { '<c-]>', 'open help link' },
-  ['gf']            = { ':e <cfile><CR>', 'edit file' },
-  ['<m-i>']         = { 'o```{r}<cr>```<esc>O', "r code chunk" },
-  ['<cm-i>']        = { 'o```{python}<cr>```<esc>O', "r code chunk" },
-  ['<m-I>']         = { 'o```{python}<cr>```<esc>O', "r code chunk" },
   [']q']            = {':silent cnext<cr>', 'quickfix next'},
   ['[q']            = {':silent cprev<cr>', 'quickfix prev'},
   [']b']            = {'<cmd>bnext<cr>', 'buffer next'},

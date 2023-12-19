@@ -1,5 +1,5 @@
 return {
-  'tpope/vim-surround', 
+  'tpope/vim-surround',
   'tpope/vim-sleuth',
   {
     -- Add indentation guides even on blank lines
@@ -8,10 +8,13 @@ return {
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
     opts = {
-      -- enabled = true,
-      -- char = '┊'
-      -- show_trailing_blankline_indent = false,
-      -- show_current_context = true
+      indent = {
+        char = "│",
+        -- tab_char = { "a", "b", "c" },
+        -- highlight = { "Function", "Label" },
+        -- smart_indent_cap = true,
+        -- priority = 2
+      }
     },
   },
   -- "gc" to comment visual regions/lines
