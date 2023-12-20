@@ -1,7 +1,7 @@
 
 -- Set <space> as the leader key
 vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.maplocalleader = ','
 
 
 -- Set highlight on search
@@ -42,6 +42,8 @@ vim.o.termguicolors = true
 vim.o.shiftwidth = 2
 vim.o.textwidth = 80
 vim.o.spell = true
+
+vim.o.conceallevel = 3
 
 -- Remap for dealing with word wrap
 -- This will move cursor down through softwrapped lines instead of skipping

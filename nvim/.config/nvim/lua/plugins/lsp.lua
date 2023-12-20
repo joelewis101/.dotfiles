@@ -9,7 +9,7 @@ return {
         ensure_installed = {
           'r', 'python', 'markdown', 'markdown_inline',
           'julia', 'bash', 'yaml', 'lua', 'vim',
-          'query', 'vimdoc', 'latex', 'html', 'css',
+          'query', 'vimdoc', 'latex', 'html', 'css', 'norg'
         },
         highlight = {
           enable = true,

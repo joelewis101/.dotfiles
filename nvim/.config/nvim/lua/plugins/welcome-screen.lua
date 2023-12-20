@@ -44,7 +44,7 @@ return {
         local datetime = os.date(" %Y-%m-%d   %H:%M:%S")
         local hour = tableTime.hour
         local greetingsTable = {
-          [1] = "  Go to bed!",
+          [1] = "  Sleep well",
           [2] = "  Good morning",
           [3] = "  Good afternoon",
           [4] = "  Good evening",
@@ -95,7 +95,8 @@ return {
             { action = "ene | startinsert",                                        desc = " New file",        icon = " ",  key = "n" },
             { action = "Telescope oldfiles",                                       desc = " Recent files",    icon = " ", key = "r" },
             { action = "Telescope live_grep",                                      desc = " Find text",       icon = " ", key = "g" },
-            { action = [[lua require("lazyvim.util").telescope.config_files()()]], desc = " Config",          icon = " ", key = "c" },
+            { action = "Oil ~/.config/nvim",                                       desc = " Config",          icon = " ", key = "c" },
+            { action = "Neorg workspace notes",                                    desc = " Neorg todo",      icon = " ", key = "t" },
             { action = "Lazy",                                                     desc = " Lazy",            icon = "󰒲 ", key = "l" },
             { action = "qa",                                                       desc = " Quit",            icon = " ", key = "q" },
           },
