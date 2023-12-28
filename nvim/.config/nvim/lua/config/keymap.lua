@@ -230,3 +230,25 @@ wk.register({
   ['<cm-i>'] = { '<esc>o```{python}<cr>```<esc>O', "r code chunk" },
   ['<m-I>'] = { '<esc>o```{python}<cr>```<esc>O', "r code chunk" },
 }, { mode = 'i' })
+
+-- norg
+
+-- failed attempt to use Neorg with which key
+
+-- _G.whichkeyNorg = function()
+--   local buf = vim.api.nvim_get_current_buf()
+--   wk.register({
+--      i = {
+--       name = "Neorg insert", -- buffer = buf,
+--       -- { b = { "<cmd>:pwd<cr>", "banana", buffer = buf}}
+--       -- d = { "<cmd>echo 'markdown header'<cr>", "Create header", buffer = buf },
+--     }
+-- },
+--     { mode = 'n', prefix = "<localleader>", buffer = buf}
+--   )
+-- end
+--
+--
+-- vim.cmd(([[
+-- autocmd FileType norg lua whichkeyNorg()
+-- ]]))
