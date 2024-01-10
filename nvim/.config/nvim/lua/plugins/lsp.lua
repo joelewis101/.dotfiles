@@ -156,6 +156,12 @@ return {
       capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
       capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+      if capabilities.workspace == nil then
+        capabilities.workspace = {}
+        capabilities.workspace.didChangeWatchedFiles = {}
+      end
+      capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = false
+
       -- also needs:
       -- $home/.config/marksman/config.toml :
       -- [core]

@@ -16,7 +16,11 @@ return {
               hover = {
                 border = require 'misc.style'.border
               }
-            }
+            },
+          buffers = {
+            set_filetype = true,
+            write_to_disk = true,
+          },
           }
       },
 

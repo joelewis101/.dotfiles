@@ -30,6 +30,22 @@ end
 -- nmap("[b", "<cmd>bprevious<cr>")
 -- nmap("]b", "<cmd>bnext<cr>")
 
+-- disable arrow keys!
+--
+--
+
+nmap("<Up>", "<Nop>")
+nmap("<Down>", "<Nop>")
+nmap("<Left>", "<Nop>")
+nmap("<Right>", "<Nop>")
+imap("<Up>", "<Nop>")
+imap("<Down>", "<Nop>")
+imap("<Left>", "<Nop>")
+imap("<Right>", "<Nop>")
+vmap("<Up>", "<Nop>")
+vmap("<Down>", "<Nop>")
+vmap("<Left>", "<Nop>")
+vmap("<Right>", "<Nop>")
 
 -- Resize window using <shift> arrow keys
 nmap("<S-Up>", "<cmd>resize +2<CR>")
@@ -80,33 +96,32 @@ nmap('n', "nzz")
 nmap('<c-d>', '<c-d>zz')
 nmap('<c-u>', '<c-u>zz')
 
-local function toggle_light_dark_theme()
-  if vim.o.background == 'light' then
-    vim.o.background = 'dark'
-    vim.cmd [[Catppuccin mocha]]
+local function toggle_diagnostics()
+  if vim.diagnostic.is_disabled() then
+    vim.diagnostic.enable()
   else
-    vim.o.background = 'light'
-    vim.cmd [[Catppuccin latte]]
+    vim.diagnostic.disable()
   end
 end
-
 --show kepbindings with whichkey
---add your own here if you want them to
---show up in the popup as well
 wk.register(
 
-  { 
-    ['<cr>'] = {"<Plug>SlimeSendCell", "send code cell"},
+  {
+    ['<cr>'] = { "<Plug>SlimeSendCell", "send code cell" },
     ['<space>'] = { "<cmd>Telescope buffers<cr>", "Telescope buffers" },
     c = {
       name = 'code',
-      c = { ':SlimeConfig<cr>', 'slime config' },
-      n = { ':split term://$SHELL<cr>', 'new terminal' },
-      r = { ':split term://R<cr>', 'new R terminal' },
-      p = { ':split term://python<cr>', 'new python terminal' },
-      i = { ':split term://ipython<cr>', 'new ipython terminal' },
-      j = { ':split term://julia<cr>', 'new julia terminal' },
-      s = { ':.s/, /,\\r/g<CR>', 'split line on ,' }
+      c = {
+        name = "set conceal level",
+        ['0'] = { '<cmd>set conceallevel=0<cr>', "conceallevel 0"},
+        ['1'] = { '<cmd>set conceallevel=1<cr>', "conceallevel 1"},
+        ['2'] = { '<cmd>set conceallevel=2<cr>', "conceallevel 2"},
+        ['3'] = { '<cmd>set conceallevel=3<cr>', "conceallevel 3"},
+      },
+      s    = { ':SlimeConfig<cr>', 'slime config' },
+      [','] = { ':.s/, /,\\r/g<CR>', 'split line on ,' },
+      d    = { toggle_diagnostics, "toggle diagnostics" },
+      q    = { vim.diagnostic.setqflist, "add diagnostics to quickfix list" }
     },
     l = {
       name = 'lsp',
@@ -114,26 +129,20 @@ wk.register(
       R    = { 'rename' },
       D    = { vim.lsp.buf.type_definition, 'type definition' },
       a    = { vim.lsp.buf.code_action, 'code action' },
-      e    = { vim.diagnostic.open_float, 'open diagnostic float' },
-      f    = { vim.lsp.buf.format, 'format' },
-      d    = {
-        name = 'diagnostics',
-        d = { vim.diagnostic.disable, 'disable' },
-        e = { vim.diagnostic.enable, 'enable' },
-      },
+      f    = { vim.lsp.buf.format, 'format buffer with LSP' },
       m    = { ':Mason<cr>', 'Mason' }
     },
     q = {
       name = 'quarto',
-      a = { ":QuartoActivate<cr>", 'activate' },
-      p = { ":lua require'quarto'.quartoPreview()<cr>", 'preview' },
-      q = { ":lua require'quarto'.quartoClosePreview()<cr>", 'close' },
-      h = { ":QuartoHelp ", 'help' },
+      a    = { ":QuartoActivate<cr>", 'activate' },
+      p    = { ":lua require'quarto'.quartoPreview()<cr>", 'preview' },
+      q    = { ":lua require'quarto'.quartoClosePreview()<cr>", 'close' },
+      h    = { ":QuartoHelp ", 'help' },
       o    = { require 'otter'.dev_setup, 'otter activate' },
-      e = { ":lua require'otter'.export()<cr>", 'otter export' },
-      E = { ":lua require'otter'.export(true)<cr>", 'otter export overwrite' },
+      e    = { ":lua require'otter'.export()<cr>", 'otter export' },
+      E    = { ":lua require'otter'.export(true)<cr>", 'otter export overwrite' },
     },
-    e = { "<cmd>:Oil<cr>", "explore filetree"}, 
+    e = { "<cmd>:Oil<cr>", "explore filetree" },
     f = {
       name = 'find (telescope)',
       f = { '<cmd>Telescope find_files<cr>', 'files' },
@@ -153,12 +162,12 @@ wk.register(
       o = { '<cmd>Telescope colorscheme<cr>', 'c[o]lortheme' },
       p = { "project" },
     },
-      t = {
-        name = 'treesitter',
-        t = { vim.treesitter.inspect_tree, 'show tree' },
-        c = { ':=vim.treesitter.get_captures_at_cursor()<cr>', 'show capture' },
-        n = { ':=vim.treesitter.get_node():type()<cr>', 'show node' },
-      },
+    t = {
+      name = 'treesitter',
+      t = { vim.treesitter.inspect_tree, 'show tree' },
+      c = { ':=vim.treesitter.get_captures_at_cursor()<cr>', 'show capture' },
+      n = { ':=vim.treesitter.get_node():type()<cr>', 'show node' },
+    },
     s = {
       name = "spellcheck",
       s = { "<cmd>Telescope spell_suggest<cr>", "spelling" },
@@ -194,7 +203,6 @@ wk.register(
     },
   }, { mode = 'n', prefix = '<leader>' }
 )
-
 -- normal mode
 wk.register({
   ['<c-LeftMouse>'] = { '<cmd>lua vim.lsp.buf.definition()<CR>', 'go to definition' },
