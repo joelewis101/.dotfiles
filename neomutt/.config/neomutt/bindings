@@ -38,9 +38,14 @@ bind index,pager \Cp sidebar-prev
 bind index,pager \Cn sidebar-next
 bind index,pager B sidebar-toggle-visible
 
-macro index,pager <F1> <change-folder>"~/Mail/lstmed/INBOX"<enter>"
+macro index,pager <F1> <change-folder>"~/Mail/lstmed/INBOX"<enter>" 
 macro index,pager <F2> <change-folder>"~/Mail/UoL/INBOX"<enter>"
 macro index,pager <F3> <change-folder>"~/Mail/doctors/INBOX"<enter>"
+macro index,pager <F4> <change-folder>"~/Mail/lstmed/junk-bogofilter"<enter>"
+macro index,pager <F5> <change-folder>"~/Mail/UoL/junk-bogofilter"<enter>"
+macro index,pager <F6> <change-folder>"~/Mail/doctors/junk-bogofilter"<enter>"
+
+
 
 # global index and pager shortcuts
 bind index,pager @ compose-to-sender
@@ -119,7 +124,7 @@ macro index <F9> \
 <enter-command>set pipe_decode=\$my_old_pipe_decode wait_key=\$my_old_wait_key<enter>" \
 "notmuch: reconstruct thread"
 
-macro index <F6> \
+macro index <F8> \
 "<enter-command>set my_old_pipe_decode=\$pipe_decode my_old_wait_key=\$wait_key nopipe_decode nowait_key<enter>\
 <pipe-message>notmuch-mutt tag -- -inbox<enter>\
 <enter-command>set pipe_decode=\$my_old_pipe_decode wait_key=\$my_old_wait_key<enter>" \

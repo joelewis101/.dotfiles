@@ -25,30 +25,26 @@ named-mailboxes INBOX-doctors "~/Mail/doctors/INBOX"
 named-mailboxes "=========" "~/Mail/UoL/Z5"
 named-mailboxes Searches "~/.cache/notmuch/mutt/results"
 named-mailboxes "=========" "~/Mail/UoL/Z1"
-
-named-mailboxes Drafts-lstmed "~/Mail/lstmed/Drafts"
-named-mailboxes Drafts-UoL "~/Mail/UoL/Drafts"
-named-mailboxes Drafts-doctors "~/Mail/doctors/Drafts"
-
-named-mailboxes "========= " "~/Mail/UoL/Z2"
-
-named-mailboxes Sent-lstmed "~/Mail/lstmed/Sent"
-named-mailboxes Sent-UoL "~/Mail/UoL/Sent"
-named-mailboxes Sent-doctors "~/Mail/doctors/Sent"
-named-mailboxes "=========  " "~/Mail/UoL/Z3"
-
-named-mailboxes Archive-lstmed "~/Mail/lstmed/Archive"
-named-mailboxes Archive-UoL "~/Mail/UoL/Archive"
-named-mailboxes Archive-doctors "~/Mail/doctors/Archive"
-
-named-mailboxes "=========  " "~/Mail/UoL/Z4"
-
 named-mailboxes Bogon?-lstmed "~/Mail/lstmed/junk-bogofilter"
 named-mailboxes Bogon?-UoL "~/Mail/UoL/junk-bogofilter"
 named-mailboxes Bogon?-doctors "~/Mail/doctors/junk-bogofilter"
 named-mailboxes Junk-lstmed "~/Mail/lstmed/Junk"
 named-mailboxes Junk-UoL "~/Mail/UoL/Junk"
 named-mailboxes Junk-doctors "~/Mail/doctors/Junk"
+named-mailboxes "=========  " "~/Mail/UoL/Z4"
+named-mailboxes Drafts-lstmed "~/Mail/lstmed/Drafts"
+named-mailboxes Drafts-UoL "~/Mail/UoL/Drafts"
+named-mailboxes Drafts-doctors "~/Mail/doctors/Drafts"
+named-mailboxes "========= " "~/Mail/UoL/Z2"
+named-mailboxes Sent-lstmed "~/Mail/lstmed/Sent"
+named-mailboxes Sent-UoL "~/Mail/UoL/Sent"
+named-mailboxes Sent-doctors "~/Mail/doctors/Sent"
+named-mailboxes "=========  " "~/Mail/UoL/Z3"
+named-mailboxes Archive-lstmed "~/Mail/lstmed/Archive"
+named-mailboxes Archive-UoL "~/Mail/UoL/Archive"
+named-mailboxes Archive-doctors "~/Mail/doctors/Archive"
+
+
 
 #set folder = "imap://127.0.0.1:1143/"
 
