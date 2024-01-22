@@ -99,8 +99,10 @@ nmap('<c-u>', '<c-u>zz')
 local function toggle_diagnostics()
   if vim.diagnostic.is_disabled() then
     vim.diagnostic.enable()
+    print("Diagnostics ON")
   else
     vim.diagnostic.disable()
+    print("Diagnostics OFF")
   end
 end
 --show kepbindings with whichkey
@@ -175,9 +177,7 @@ wk.register(
       n = { ']s', 'next' },
       p = { '[s', 'previous' },
       g = { 'zg', 'good' },
-      r = { 'zg', 'right' },
       w = { 'zw', 'wrong' },
-      b = { 'zw', 'bad' },
       ['?'] = { '<cmd>Telescope spell_suggest<cr>', 'suggest' },
     },
     g = {

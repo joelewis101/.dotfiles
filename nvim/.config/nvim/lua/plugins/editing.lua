@@ -1,6 +1,7 @@
 return {
   'tpope/vim-surround',
   'tpope/vim-sleuth',
+  'tpope/vim-repeat',
   {
     -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
