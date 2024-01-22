@@ -12,17 +12,18 @@ bind pager,attach h exit
 bind pager j next-line
 bind pager k previous-line
 bind pager l view-attachments
-bind index D delete-message
+bind index d delete-message
 bind index U undelete-message
 bind index L limit
 bind index h noop
+bind index,pager b noop
 bind index l display-message
 bind browser h goto-parent
 bind browser l select-entry
 bind pager,browser gg top-page
 bind pager,browser G bottom-page
-bind index,pager,browser d half-down
-bind index,pager,browser u half-up
+bind index,pager,browser \Cd half-down
+bind index,pager,browser \Cu half-up
 bind index,pager R group-reply
 bind editor <Tab> complete-query
 bind index,pager x noop
@@ -38,18 +39,19 @@ bind index,pager \Cp sidebar-prev
 bind index,pager \Cn sidebar-next
 bind index,pager B sidebar-toggle-visible
 
-macro index,pager <F1> <change-folder>"~/Mail/lstmed/INBOX"<enter>" 
-macro index,pager <F2> <change-folder>"~/Mail/UoL/INBOX"<enter>"
-macro index,pager <F3> <change-folder>"~/Mail/doctors/INBOX"<enter>"
-macro index,pager <F4> <change-folder>"~/Mail/lstmed/junk-bogofilter"<enter>"
-macro index,pager <F5> <change-folder>"~/Mail/UoL/junk-bogofilter"<enter>"
-macro index,pager <F6> <change-folder>"~/Mail/doctors/junk-bogofilter"<enter>"
+macro index,pager b1 <change-folder>"~/Mail/lstmed/INBOX"<enter>" 
+macro index,pager b2 <change-folder>"~/Mail/UoL/INBOX"<enter>"
+macro index,pager b3 <change-folder>"~/Mail/doctors/INBOX"<enter>"
+macro index,pager b4 <change-folder>"~/.cache/notmuch/mutt/results<enter>"
+macro index,pager b5 <change-folder>"~/Mail/lstmed/junk-bogofilter"<enter>"
+macro index,pager b6 <change-folder>"~/Mail/UoL/junk-bogofilter"<enter>"
+macro index,pager b7 <change-folder>"~/Mail/doctors/junk-bogofilter"<enter>"
 
 
 
 # global index and pager shortcuts
 bind index,pager @ compose-to-sender
-bind index,pager D purge-message
+bind index,pager d purge-message
 #bind index <tab> sync-mailbox
 bind index <space> collapse-thread
 
@@ -58,8 +60,8 @@ bind editor <Tab> complete-query
 bind editor ^T complete
 
 # archive with A
-macro index A "<enter-command>set confirmappend=no delete=yes\n<tag-prefix><save-message>=archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n" "Archive message (euther current or tagged)"
-macro pager A "<enter-command> unset wait_key\n<save-message>=archive\n<enter-command>set wait_key\n" "Archive current message from pager"
+macro index a "<enter-command>set confirmappend=no delete=yes\n<tag-prefix><save-message>=archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n" "Archive message (euther current or tagged)"
+macro pager a "<enter-command> unset wait_key\n<save-message>=archive\n<enter-command>set wait_key\n" "Archive current message from pager"
 
 # Press A to add contact to Khard address book
 #macro index,pager A \
@@ -110,25 +112,25 @@ macro attach,compose \cb "<pipe-entry> urlscan -cd<Enter>" "call urlscan to extr
 bind editor <Tab> complete-query
 bind editor ^T complete
 
-macro index \\  \
+macro index,pager \\  \
 "<enter-command>set my_old_pipe_decode=\$pipe_decode my_old_wait_key=\$wait_key nopipe_decode nowait_key<enter>\
 <shell-escape>notmuch-mutt -r --prompt search<enter>\
 <change-folder-readonly>`echo ${XDG_CACHE_HOME:-$HOME/.cache}/notmuch/mutt/results`<enter>\
 <enter-command>set pipe_decode=\$my_old_pipe_decode wait_key=\$my_old_wait_key<enter>" \
 "notmuch: search mail"
 
-macro index <F9> \
+macro index,pager T \
 "<enter-command>set my_old_pipe_decode=\$pipe_decode my_old_wait_key=\$wait_key nopipe_decode nowait_key<enter>\
 <pipe-message>notmuch-mutt -r thread<enter>\
 <change-folder-readonly>`echo ${XDG_CACHE_HOME:-$HOME/.cache}/notmuch/mutt/results`<enter>\
 <enter-command>set pipe_decode=\$my_old_pipe_decode wait_key=\$my_old_wait_key<enter>" \
 "notmuch: reconstruct thread"
 
-macro index <F8> \
-"<enter-command>set my_old_pipe_decode=\$pipe_decode my_old_wait_key=\$wait_key nopipe_decode nowait_key<enter>\
-<pipe-message>notmuch-mutt tag -- -inbox<enter>\
-<enter-command>set pipe_decode=\$my_old_pipe_decode wait_key=\$my_old_wait_key<enter>" \
-"notmuch: remove message from inbox"
+# macro index <F8> \
+# "<enter-command>set my_old_pipe_decode=\$pipe_decode my_old_wait_key=\$wait_key nopipe_decode nowait_key<enter>\
+# <pipe-message>notmuch-mutt tag -- -inbox<enter>\
+# <enter-command>set pipe_decode=\$my_old_pipe_decode wait_key=\$my_old_wait_key<enter>" \
+# "notmuch: remove message from inbox"
 
 # This binding was using <space> for folders auto-completion and breaking a lot of push macros.
 unbind editor <space>
