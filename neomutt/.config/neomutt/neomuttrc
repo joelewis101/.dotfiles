@@ -11,12 +11,17 @@
 source "~/.config/neomutt/profiles/doctors2"
 folder-hook "~/Mail/doctors/*"  'source ~/.config/neomutt/profiles/doctors2 ; set from="joelewis101@doctors.org.uk"'
 
+
 source "~/.config/neomutt/profiles/UoL2"
 folder-hook "~/Mail/UoL/*"  'source ~/.config/neomutt/profiles/UoL2 ; set from="jmlewis@liverpool.ac.uk"'
 
 source "~/.config/neomutt/profiles/lstmed2"
 folder-hook "~/Mail/lstmed/*"  'source ~/.config/neomutt/profiles/lstmed2 ; set from="joseph.lewis@lstmed.ac.uk"'
 
+send-hook '~f joelewis101@doctors.org.uk' 'source ~/.config/neomutt/profiles/doctors2'
+send-hook '~f Joseph.Lewis@liverpool.ac.uk' 'source ~/.config/neomutt/profiles/UoL2'
+send-hook '~f jmlewis@liverpool.ac.uk' 'source ~/.config/neomutt/profiles/UoL2'
+send-hook '~f joseph.lewis@lstmed.ac.uk' 'source ~/.config/neomutt/profiles/lstmed2'
 
 source ~/.config/neomutt/sidebar
 source ~/.config/neomutt/settings

@@ -10,6 +10,7 @@ killall mbsync &>/dev/null
 echo "Running notmuch"
 killall notmuch &>/dev/null; 
 /opt/homebrew/bin/notmuch new 
+/opt/homebrew/bin/notmuch tag -inbox 'tag:inbox and not folder:"/.*INBOX$/"'
 # echo "Running bogofilter"
 # /Users/joelewis/.config/neomutt/bogofilter_spam.sh
 echo "Done. Share and Enjoy!"

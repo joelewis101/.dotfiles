@@ -104,7 +104,7 @@ set tilde
 unset markers
 
 set reverse_name
-alternates = joseph.lewis@lstmed.ac.uk jmlewis@liverpool.ac.uk
+alternates = joseph.lewis@lstmed.ac.uk jmlewis@liverpool.ac.uk joseph.lewis@liverpool.ac.uk joelewis101@doctors.org.uk 
 
 spam "X-Bogosity: Spam" "Bogon"
 

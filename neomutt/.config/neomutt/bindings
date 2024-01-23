@@ -39,13 +39,13 @@ bind index,pager \Cp sidebar-prev
 bind index,pager \Cn sidebar-next
 bind index,pager B sidebar-toggle-visible
 
-macro index,pager b1 <change-folder>"~/Mail/lstmed/INBOX"<enter>" 
-macro index,pager b2 <change-folder>"~/Mail/UoL/INBOX"<enter>"
-macro index,pager b3 <change-folder>"~/Mail/doctors/INBOX"<enter>"
-macro index,pager b4 <change-folder>"~/.cache/notmuch/mutt/results<enter>"
-macro index,pager b5 <change-folder>"~/Mail/lstmed/junk-bogofilter"<enter>"
-macro index,pager b6 <change-folder>"~/Mail/UoL/junk-bogofilter"<enter>"
-macro index,pager b7 <change-folder>"~/Mail/doctors/junk-bogofilter"<enter>"
+macro index,pager b1 "<change-folder>~/Mail/lstmed/INBOX<enter>" "Switch to LSTM inbox"
+macro index,pager b2 "<change-folder>~/Mail/UoL/INBOX<enter>" "Switch to UoL inbox"
+macro index,pager b3 "<change-folder>~/Mail/doctors/INBOX<enter>" "Switch to doctors inbox"
+macro index,pager b4 "<change-folder>~/.cache/notmuch/mutt/results<enter>" "Swicth to seacrh folder"
+macro index,pager b5 "<change-folder>~/Mail/lstmed/junk-bogofilter<enter>" "Switch to LSTM bogons"
+macro index,pager b6 "<change-folder>~/Mail/UoL/junk-bogofilter<enter>" "Switch to UoL bogons"
+macro index,pager b7 "<change-folder>~/Mail/doctors/junk-bogofilter<enter>" "Switch to doctors bogons"
 
 
 
