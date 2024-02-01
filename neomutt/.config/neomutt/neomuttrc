@@ -1,4 +1,4 @@
-
+# vim: filetype=muttrc
 #source "~/.config/neomutt/profiles/lstmed"
 #folder-hook imap://joseph.lewis@lstmed.ac.uk@127.0.0.1:1143/  'source ~/.config/neomutt/profiles/lstmed ; set from="joseph.lewis@lstmed.ac.uk"'
 
@@ -34,3 +34,6 @@ source ~/.config/neomutt/bindings
 
 #macro index S "<shell-escape>mbsync -a<enter>" "run mbsync to sync mail for this account"
 macro index S "<enter-command>set wait_key\n<shell-escape>/Users/joelewis/.config/neomutt/sync_mail.sh<enter>" "run mbsync to sync mail for this account"
+
+set alias_file=~/.config/neomutt/aliases
+source "~/.config/neomutt/aliases"

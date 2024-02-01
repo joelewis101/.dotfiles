@@ -1,0 +1,18 @@
+# vim: filetype=muttrc
+# aliases
+
+alias nick Nicholas Feasey <Nicholas.Feasey@lstmed.ac.uk>
+alias fabrice Fabrice Graf <Fabrice.Graf@lstmed.ac.uk>
+alias sarah Sarah Gallichan <Sarah.Gallichan@lstmed.ac.uk>
+alias maria Maria Moore <Maria.Moore@lstmed.ac.uk>
+alias claudia Claudia McKeown <Claudia.McKeown@lstmed.ac.uk>
+alias esther Esther.Picton-Barlow@lstmed.ac.uk
+alias faye Faye Moody <Faye.Moody@lstmed.ac.uk>
+alias stacy "Todd Stacy (RQ6) RLBUHT" <stacy.todd@liverpoolft.nhs.uk>
+
+# TRACS groups
+alias tracs-lab nick, fabrice, sarah, maria, esther, claudia
+alias tracs tracs-lab, faye, stacy
+# other aliases below here
+alias chris-j \"Jewell, Christopher\" <c.jewell@lancaster.ac.uk>
+alias miriam Miriam Taegtmeyer <Miriam.Taegtmeyer@lstmed.ac.uk>

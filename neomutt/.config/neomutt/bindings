@@ -27,6 +27,7 @@ bind index,pager,browser \Cu half-up
 bind index,pager R group-reply
 bind editor <Tab> complete-query
 bind index,pager x noop
+bind index,pager \Ca create-alias
 
 unbind index,pager p
 
@@ -110,7 +111,7 @@ macro attach,compose \cb "<pipe-entry> urlscan -cd<Enter>" "call urlscan to extr
  set query_command = "echo '' && notmuch address from:/%s/"
  set query_format="%4c %t %-70.70a %-70.70n %?e?(%e)?"
 bind editor <Tab> complete-query
-bind editor ^T complete
+ bind editor \Ct complete
 
 macro index,pager \\  \
 "<enter-command>set my_old_pipe_decode=\$pipe_decode my_old_wait_key=\$wait_key nopipe_decode nowait_key<enter>\
