@@ -110,7 +110,7 @@ wk.register(
 
   {
     ['<cr>'] = { "<Plug>SlimeSendCell", "send code cell" },
-    ['<space>'] = { "<cmd>Telescope buffers<cr>", "Telescope buffers" },
+    ['<space>'] = {':lua require("telescope.builtin").buffers({sort_mru=true,ignore_current_buffer=true})<cr>', "Telescope buffers" },
     c = {
       name = 'code',
       c = {
