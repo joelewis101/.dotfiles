@@ -201,12 +201,17 @@ wk.register(
         c = { ':GitBlameCopyCommitURL<cr>', 'copy' },
       }
     },
+    p = {
+      name = "pipe buffer to ...",
+      k = { '<cmd>:new | r ! khal printics #<cr>', "khal printics"}
+    }
   }, { mode = 'n', prefix = '<leader>' }
 )
 -- normal mode
 wk.register({
   ['<c-LeftMouse>'] = { '<cmd>lua vim.lsp.buf.definition()<CR>', 'go to definition' },
   ["<c-e>"]         = { '<cmd>:Oil<cr>', 'explore filetree'},
+  ["<c-b>"]         = { '<cmd>:UrlView<cr>', 'oprn urlviewer'},
   ['<esc>']         = { '<cmd>noh<cr>', 'remove search highlight' },
   [']q']            = {':silent cnext<cr>', 'quickfix next'},
   ['[q']            = {':silent cprev<cr>', 'quickfix prev'},

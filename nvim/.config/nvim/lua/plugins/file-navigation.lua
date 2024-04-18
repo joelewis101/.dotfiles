@@ -13,5 +13,9 @@ return{
   opts = {},
   -- Optional dependencies
   dependencies = { "nvim-tree/nvim-web-devicons" },
-}
+},
+  {'axieax/urlview.nvim',
+  opts = {default_picker = "telescope",
+    default_action = "system"} 
+  }
 }

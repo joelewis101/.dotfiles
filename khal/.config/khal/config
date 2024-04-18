@@ -10,6 +10,11 @@
   color = light red
   priority = 10
 
+[[clinical rota]]
+  path = ~/.calendar/google/0518cbfbd9bd433851e52c0866370c626cb0ae6fe4072b147b2604c57f485b78@group.calendar.google.com
+  color = 208
+  priority = 10
+
 [[holidays]]
   path = ~/.calendar/google/om6u3qlapp3b5jqd4pvun5gu9g@group.calendar.google.com
   color = yellow
@@ -22,7 +27,7 @@
 
 [[lstmed]]
   path = ~/.calendar/lstmed/calendar
-  color = dark cyan
+  color = dark blue
   priority = 1
 
 [[public holidays]]
@@ -49,3 +54,5 @@ blank_line_before_day = True
 agenda_day_format = {bold}{name}{date-long}{reset}
 agenda_event_format = {calendar-color}{cancelled}{start-end-time-style} {title}{repeat-symbol}
 
+[keybindings]
+external_edit = ctrl e
