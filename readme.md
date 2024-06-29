@@ -21,3 +21,5 @@ nvim
 
 Stow looks in the nvim folder, and makes symlink to the contents of that 
 folder one folder above where the stow command was run.
+
+vdirsyncer and davmail config files contain secrets - not pushed here
