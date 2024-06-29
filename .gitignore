@@ -1,3 +1,5 @@
 davmail/
+vdirsyncer/
+.DS_Store
 TODO.txt
 *.gpg
