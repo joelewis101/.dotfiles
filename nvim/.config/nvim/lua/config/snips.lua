@@ -14,7 +14,8 @@ ls.add_snippets(nil, {
       dscr = "Cheers sign off",
     }, {
       text({'Cheers,',
-      'Joe'})
+      'Joe',
+        ''})
     }),
   },
 })
