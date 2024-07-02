@@ -1,0 +1,54 @@
+"query:unread:unread = \"yes\""
+"query:data_science:tags # \"data_science\""
+"query:authors:tags # \"Authors\" and unread = \"yes\""
+"query:journals:tags # \"Journals\""
+
+https://quarto.org/docs/blog/index.xml data_science
+https://solomonkurz.netlify.com/index.xml data_science
+http://fharrell.com/index.xml data_science
+https://ikashnitsky.github.io/atom.xml data_science
+http://ellisp.github.io/feed.xml data_science
+http://elevanth.org/blog/feed/ data_science
+http://www.stat.columbia.edu/~cook/movabletype/mlm/atom.xml data_science
+http://blog.rstudio.org/feed/ data_science
+https://www.tidyverse.org/blog/index.xml data_science
+https://blog.djnavarro.net/index.xml data_science
+https://pubmed.ncbi.nlm.nih.gov/rss/search/1ZEzhvEsCLG8IvoZ_4ZOlgWhsf3dbf3BmlrL8Wt9LmbnIrogt9/?limit=15&utm_campaign=pubmed-2&fc=20230809105121 "Authors"
+https://pubmed.ncbi.nlm.nih.gov/rss/search/16i3X1xKDU1eocMKsWRRS3SjwMwJS4MK-iZZ-p-83sIhmJ7UAU/?limit=15&utm_campaign=pubmed-2&fc=20230809091700 "Authors"
+https://pubmed.ncbi.nlm.nih.gov/rss/search/1x_POZXjwvk8sboqzgrIaw67M9jzU-u3pZ5sksqLzuNtBNMgF2/?limit=20&utm_campaign=pubmed-2&fc=20230809092035 "Authors"
+https://pubmed.ncbi.nlm.nih.gov/rss/search/1lUlP-bQmnZeaArU9QlnPXNM4HQc0De3cq1Sl18J_jNGOzlQuB/?limit=15&utm_campaign=pubmed-2&fc=20230809095927 "Authors"
+https://pubmed.ncbi.nlm.nih.gov/rss/search/1tkHZW0bVYJYNfoDP6oa3ZSjtO7oTpYW_HdBzJ4Z_OvPgqrQUp/?limit=15&utm_campaign=pubmed-2&fc=20230809085605 "Authors"
+https://pubmed.ncbi.nlm.nih.gov/rss/search/1n9QFWGRy9iScXjf4m4VPxp01W_MJLlXw22CzCscmFI1U4QY8e/?limit=15&utm_campaign=pubmed-2&fc=20230809093647 "Authors"
+https://pubmed.ncbi.nlm.nih.gov/rss/search/1bI4sPzH9iMmTqhXSQ_KJHZrPsllZZ8vRSqIJhyLECLeSqIg9Y/?limit=15&utm_campaign=pubmed-2&fc=20230809110313 "Authors"
+https://pubmed.ncbi.nlm.nih.gov/rss/search/1v7eLHwZVcQwuHlIxf9Jd8gtC26pzKEjyiVfX5qAA_5objckf7/?limit=15&utm_campaign=pubmed-2&fc=20230809092300 "Authors"
+https://pubmed.ncbi.nlm.nih.gov/rss/search/1rWUB7RlDfISxecKs-63lQkiiAMtJpu5Rer7UARCZw5HpdeAwb/?limit=20&utm_campaign=pubmed-2&fc=20230809091539 "Authors"
+https://pubmed.ncbi.nlm.nih.gov/rss/search/1ZGxMH1ktXCMn7liiR6l01n_iPZ35qz1rbko5bStwoIG09tsAT/?limit=15&utm_campaign=pubmed-2&fc=20230809092914 "Authors"
+https://pubmed.ncbi.nlm.nih.gov/rss/search/16aqM2ScRApFfTDXRDNO0O2k8Ev1e6xrqSgixQVyDub_dvzIGr/?limit=20&utm_campaign=pubmed-2&fc=20230809091808 "Authors"
+https://pubmed.ncbi.nlm.nih.gov/rss/search/12CQgEfkYEaeeZpiYyEXthNAOC6wxr1x72hHMtN6PldMM3BQv-/?limit=15&utm_campaign=pubmed-2&fc=20230810025826 "Authors"
+https://pubmed.ncbi.nlm.nih.gov/rss/search/1fs6_IKzbbnb6xcGTn4qp6yHr3VhJOPXvRePbGqzU_s67nlkDg/?limit=15&utm_campaign=pubmed-2&fc=20230809092704 "Authors"
+https://pubmed.ncbi.nlm.nih.gov/rss/search/1Jgu41lFGSj_Sh0gYDziSEqsRdATNgjJaFoNmdzDhmQJyYpIF8/?limit=15&utm_campaign=pubmed-2&fc=20230809093942 "Authors"
+https://pubmed.ncbi.nlm.nih.gov/rss/search/1BQBHy1Cez3Izioyxg5vvzJuC4wd0rhK4nn_ZesWsGk0L9dUex/?limit=15&utm_campaign=pubmed-2&fc=20230809093307 "Authors"
+https://pubmed.ncbi.nlm.nih.gov/rss/search/1HK5U4U_QH8FXe-zEp2dr27df0jtx4spcphHizk4g3udSsrY1s/?limit=15&utm_campaign=pubmed-2&fc=20230809094021 "Authors"
+https://pubmed.ncbi.nlm.nih.gov/rss/search/1ZeVs2ksGh-Hmpylhs59xmKPX-uBvsIBOfC8v5Si4hDnG8FEDf/?limit=20&utm_campaign=pubmed-2&fc=20230809091311 "Authors"
+https://pubmed.ncbi.nlm.nih.gov/rss/search/1-y-ZWVYINK7HYlXg-cNxH1hFTNAL_kPlJ_YGmjkNmVt9kWgW0/?limit=15&utm_campaign=pubmed-2&fc=20230809095543 "Authors"
+https://pubmed.ncbi.nlm.nih.gov/rss/search/1xONNp6hzwm8FsgR8gZr-Kx2GlyA-mRB8crhTjuyDH8i-4lQk7/?limit=15&utm_campaign=pubmed-2&fc=20230810042347 "Authors"
+https://pubmed.ncbi.nlm.nih.gov/rss/search/1bspEKKhDbktaPg4bS9cCWEzZ72t9Uzv2yKAebsdzuTCSb_gI4/?limit=15&utm_campaign=pubmed-2&fc=20230809095724 "Authors"
+https://pubmed.ncbi.nlm.nih.gov/rss/search/1hc_GSJf8Nhlhbg4_oWhzUpho5iE3idw5Z5u_n4x8R0kRFhsOh/?limit=15&utm_campaign=pubmed-2&fc=20230809090955 "Authors"
+https://pubmed.ncbi.nlm.nih.gov/rss/search/1ncuFVMRo4HoVSCJmAhzg-V08m-Enm-pdbvAbCY7l91yDLAQn5/?limit=15&utm_campaign=pubmed-2&fc=20230809095453 "Authors"
+https://pubmed.ncbi.nlm.nih.gov/rss/search/16U1R_35YgGfuMFV60eM5icsI-_WnfPXprHGR9xqU8yQvYhIhw/?limit=15&utm_campaign=pubmed-2&fc=20230809105454 "Authors"
+https://pubmed.ncbi.nlm.nih.gov/rss/search/12QQbiNmM99iUQF6W4S5MCRzMkEfWwmAnjzS-1UoHXkvGC3Eti/?limit=15&utm_campaign=pubmed-2&fc=20230809093016 "Authors"
+https://pubmed.ncbi.nlm.nih.gov/rss/search/1-UFW4KkLsPjVlAA1FbmLXcuGCVpRH4_LbvjtLlPLrra-uMsOA/?limit=15&utm_campaign=pubmed-2&fc=20230809093433 "Authors"
+https://pubmed.ncbi.nlm.nih.gov/rss/search/1t1-LNQP8bJmceH80zy0ptlQ9jnBbjzJCLxUqslExkNSKueg5g/?limit=15&utm_campaign=pubmed-2&fc=20240502061750 "Authors"
+https://www.thelancet.com/collection/rss/001573 "Journals"
+https://www.microbiologyresearch.org/rss/content/journal/mgen/latestarticles?fmt=rss "Journals"
+https://academic.oup.com/rss/site_5269/advanceAccess_3135.xml "Journals"
+https://www.nature.com/subjects/antimicrobial-resistance.rss "Journals"
+https://academic.oup.com/rss/site_5338/advanceAccess_3204.xml "Journals"
+https://elifesciences.org/rss/subject/microbiology-infectious-disease.xml "Journals"
+https://pubmed.ncbi.nlm.nih.gov/rss/search/1ZqrB2Ou-U88HiPfRWLg6BKjUQx8kJ-LX5C6YcVEa0BZ-779DP/?limit=15&utm_campaign=pubmed-2&fc=20230810102745 "Journals"
+https://academic.oup.com/rss/site_6222/4034.xml "Journals"
+http://www.thelancet.com/rssfeed/lanmic_current.xml "Journals"
+https://journals.asm.org/action/showFeed?ui=0&mi=6k1fs0&type=search&feed=rss&query=%2526content%253DarticlesChapters%2526field1%253DKeyword%2526sortBy%253DEarliest%2526target%253Ddefault%2526text1%253Dantimicrobial%252Bresistance "Journals"
+https://pubmed.ncbi.nlm.nih.gov/rss/search/1VgjRyKWQDp1FjeETMK6kUU-FJiMwlV0o9pN665WthQZ2YzMrM/?limit=15&utm_campaign=pubmed-2&fc=20230810102947 "Journals"
+https://academic.oup.com/rss/site_5301/advanceAccess_3167.xml "Journals"
+http://feeds.feedburner.com/HivAndIdObservations "Journals"

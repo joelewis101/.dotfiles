@@ -1,0 +1,4 @@
+*/5 * * * *  /Users/joseph.lewis/.config/neomutt/sync_mail.sh &> /Users/joelewis/.config/neomutt/sync_mail.log
+*/5 * * * *  /Users/joseph.lewis/.config/khal/sync_cal.sh &> /Users/joelewis/.config/khal/sync_cal.log
+
+
