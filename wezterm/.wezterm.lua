@@ -8,6 +8,8 @@ local config = wezterm.config_builder()
 
 -- For example, changing the color scheme:
 config.color_scheme = 'catppuccin-macchiato'
+config.send_composed_key_when_left_alt_is_pressed = true
+config.audible_bell= "Disabled"
 
 -- and finally, return the configuration to wezterm
 return config
