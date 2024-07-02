@@ -33,7 +33,7 @@ source ~/.config/neomutt/colorschemes/catpuccin.muttrc2
 source ~/.config/neomutt/bindings
 
 #macro index S "<shell-escape>mbsync -a<enter>" "run mbsync to sync mail for this account"
-macro index S "<enter-command>set wait_key\n<shell-escape>/Users/joelewis/.config/neomutt/sync_mail.sh<enter>" "run mbsync to sync mail for this account"
+macro index S "<enter-command>set wait_key\n<shell-escape>~/.config/neomutt/sync_mail.sh<enter>" "run mbsync to sync mail for this account"
 
 set alias_file=~/.config/neomutt/aliases
 source "~/.config/neomutt/aliases"

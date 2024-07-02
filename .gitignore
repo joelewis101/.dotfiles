@@ -3,3 +3,4 @@ vdirsyncer/
 .DS_Store
 TODO.txt
 *.gpg
+khal/.config/khal/sync_cal.log

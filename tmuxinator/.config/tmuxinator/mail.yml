@@ -49,8 +49,8 @@ windows:
       root: ~/tmp
       layout: main-vertical
       panes:
-        -  ~/executables/davmail-6.2.1-3496/davmail ~/.davmail.properties_lstm_modernauth
-        -  ~/executables/davmail-6.2.1-3496/davmail ~/.davmail.properties_uol_modernauth
+        -  ~/executables/davmail-6.2.2-3546/davmail ~/.dotfiles_private/davmail/.davmail.properties_lstm_modernauth
+        -  ~/executables/davmail-6.2.2-3546/davmail ~/.dotfiles_private/davmail/.davmail.properties_uol_modernauth
   - neomutt: 
     - cd ~/Documents ; neomutt
   - zsh: 
