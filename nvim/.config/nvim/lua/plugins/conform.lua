@@ -33,7 +33,7 @@ return {
       joeform = {
         inherit = false,
         command = "Rscript",
-        args = { "/Users/joelewis/.config/nvim/style.R", "$FILENAME" },
+        args = { "/Users/joseph.lewis/.config/nvim/style.R", "$FILENAME" },
         stdin = false
       }
     },   -- Set up format-on-save
