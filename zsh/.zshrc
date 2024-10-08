@@ -29,6 +29,8 @@ alias ls='ls -G'
 alias lsa='ls -alh'
 alias md='mkdir -p'
 
+alias proj="cd ~/projects"
+alias docs="cd ~/Documents"
 
 # joes scripts
 export PATH="/Users/joelewis/scripts:$PATH"
