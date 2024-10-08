@@ -99,6 +99,16 @@ bogofilter -M -n -I ~/Mail/doctors/Sent/
 # https://gist.github.com/qin-yu/bc26a2d280ee2e93b2d7860a1bfbd0c5
 #
 
+# remap  § to #
 
+if [ ! -f ~/Library/KeyBindings/DefaultKeyBinding.dict ]
+then 
+  if [ ! -d ~/Library/KeyBindings ]
+  then
+    mkdir ~/Library/KeyBindings
+  fi
+  echo '/* Map # to § key*/' > ~/test.dict
+  echo '"§" = ("insertText:", "#");' >> ~/test.dict
+fi
 
 
