@@ -31,6 +31,7 @@ brew install bogofilter
 brew install notmuch
 brew install notmuch-mutt
 brew install urlscan
+brew install w3m
 
 # calendar ---------------
 brew install khal
@@ -38,6 +39,11 @@ brew install vdirsyncer
 
 # prompt ------------------
 brew install starship
+
+ # tiling window manager and borders
+brew install --cask nikitabobko/tap/aerospace
+brew tap FelixKratz/formulae
+brew install borders
 
 # R
 brew install R
@@ -47,6 +53,8 @@ brew install pandoc
 
 # rss reader
 brew install newsboat
+
+brew install node
 
 cd ~
 git clone https://github.com/joelewis101/.dotfiles
