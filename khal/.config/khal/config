@@ -5,6 +5,11 @@
   color = dark blue
   priority = 1
 
+[[family]]
+  path = ~/.calendar/google/family09592382959155636437@group.calendar.google.com
+  color = light green
+  priority = 1
+
 [[on calls]]
   path = ~/.calendar/google/h8ctbgnb6h5vhvl0or66amtjtk@group.calendar.google.com
   color = light red
@@ -22,12 +27,12 @@
 
 [[uol]]
   path = ~/.calendar/uol/calendar
-  color = dark cyan
+  color = dark blue
   priority = 1
 
 [[lstmed]]
   path = ~/.calendar/lstmed/calendar
-  color = dark blue
+  color = dark cyan
   priority = 1
 
 [[public holidays]]
