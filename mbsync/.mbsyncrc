@@ -37,37 +37,37 @@ SyncState *
 ######## Account UoL #########
 #################################
 
-IMAPAccount UoL
-Host 127.0.0.1
-port 1144
-User jmlewis@liverpool.ac.uk
-PassCmd "/opt/homebrew/bin/gpg -q -r joelewis101@doctors.org.uk -d ~/.config/neomutt/uol_pwd.txt.gpg"
-SSLType None
-AuthMechs LOGIN
-Timeout 0
-
-
-# Remote storage
-IMAPStore UoL-remote
-Account UoL
-
-# Local storage
-MaildirStore UoL-local
-Subfolders Verbatim
-Path ~/Mail/UoL/
-Inbox ~/Mail/UoL/INBOX
-
-Channel UoL
-Far :UoL-remote:
-Near :UoL-local:
-# Include everything
-Patterns *
-# Automatically create missing mailboxes, both locally and on the server
-Create Both
-Expunge Both
-# Save the synchronization state files in the relevant directory
-SyncState *
-
+# IMAPAccount UoL
+# Host 127.0.0.1
+# port 1144
+# User jmlewis@liverpool.ac.uk
+# PassCmd "/opt/homebrew/bin/gpg -q -r joelewis101@doctors.org.uk -d ~/.config/neomutt/uol_pwd.txt.gpg"
+# SSLType None
+# AuthMechs LOGIN
+# Timeout 0
+#
+#
+# # Remote storage
+# IMAPStore UoL-remote
+# Account UoL
+#
+# # Local storage
+# MaildirStore UoL-local
+# Subfolders Verbatim
+# Path ~/Mail/UoL/
+# Inbox ~/Mail/UoL/INBOX
+#
+# Channel UoL
+# Far :UoL-remote:
+# Near :UoL-local:
+# # Include everything
+# Patterns *
+# # Automatically create missing mailboxes, both locally and on the server
+# Create Both
+# Expunge Both
+# # Save the synchronization state files in the relevant directory
+# SyncState *
+#
 
 #################################
 ######## Account doctors #########

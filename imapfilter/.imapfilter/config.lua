@@ -45,14 +45,14 @@ function sanitize_pwd(pwd)
     return pwd
 end
 
-status, uol_pass = pipe_from("/opt/homebrew/bin/gpg -q -r joelewis101@doctors.org.uk -d ~/.config/neomutt/uol_pwd.txt.gpg")
-
-uol = IMAP {
-        server = "localhost",
-        port = 1144,
-        username = "jmlewis@liverpool.ac.uk",
-        password = uol_pass
-}
+-- status, uol_pass = pipe_from("/opt/homebrew/bin/gpg -q -r joelewis101@doctors.org.uk -d ~/.config/neomutt/uol_pwd.txt.gpg")
+--
+-- uol = IMAP {
+--         server = "localhost",
+--         port = 1144,
+--         username = "jmlewis@liverpool.ac.uk",
+--         password = uol_pass
+-- }
 
 
 status, lstm_pass = pipe_from("/opt/homebrew/bin/gpg -q -r joelewis101@doctors.org.uk -d ~/.config/neomutt/lstmed_pwd.txt.gpg")
@@ -75,10 +75,10 @@ doctors = IMAP {
         ssl = "auto"
 }
 
-print("Running bogofilter on UoL mailbox ...")
-uol.INBOX:check_status()
-results = uol.INBOX:is_unseen()
-classify_and_move_messages(results, uol["junk-bogofilter"])
+-- print("Running bogofilter on UoL mailbox ...")
+-- uol.INBOX:check_status()
+-- results = uol.INBOX:is_unseen()
+-- classify_and_move_messages(results, uol["junk-bogofilter"])
 
 print("Running bogofilter on lstmed mailbox ...")
 lstm.INBOX:check_status()
