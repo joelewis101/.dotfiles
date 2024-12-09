@@ -6,6 +6,9 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 alias r="radian"
 alias mux="tmuxinator"
 export EDITOR=nvim
+# man pages with nvim
+export MANPAGER='nvim +Man!'
+export MANWIDTH=999
 
 # vim mode
 bindkey -v
