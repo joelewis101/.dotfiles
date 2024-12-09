@@ -40,7 +40,7 @@ brew install vdirsyncer
 # prompt ------------------
 brew install starship
 
- # tiling window manager and borders
+ # tiling window manager and borders with jankyborders
 brew install --cask nikitabobko/tap/aerospace
 brew tap FelixKratz/formulae
 brew install borders
