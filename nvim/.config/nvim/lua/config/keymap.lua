@@ -71,6 +71,7 @@ imap("˜", "|>")
 -- nmap('<s-cr>', '<Plug>SlimeSendCell')
 -- imap('<c-cr>', '<esc><Plug>SlimeSendCell<cr>i')
 -- imap('<s-cr>', '<esc><Plug>SlimeSendCell<cr>i')
+nmap('<c-c><c-c>', '<Plug>SlimeParagraphSend<Esc> `>j')
 
 -- send code with Enter and leader Enter
 vmap('<cr>', '<Plug>SlimeRegionSend')
