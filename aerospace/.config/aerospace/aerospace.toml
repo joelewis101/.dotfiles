@@ -220,14 +220,18 @@ alt-shift-r = 'reload-config'
 alt-shift-semicolon = 'mode service'
 
 [workspace-to-monitor-force-assignment]
+M = 'built-in'                   # Case insensitive regex substring
+B = 'built-in'                   # Case insensitive regex substring
+S = 'built-in'                   # Case insensitive regex substring
+C = 'built-in'                   # Case insensitive regex substring
 1 = 'built-in'                   # Case insensitive regex substring
 2 = 'built-in'                   # Case insensitive regex substring
 3 = 'built-in'                   # Case insensitive regex substring
-4 = ['secondary', 'dell']                   # Case insensitive regex substring
-5 = ['secondary', 'dell']        # You can specify multiple patterns. The first matching pattern will be used
-6 = ['secondary', 'dell']        # You can specify multiple patterns. The first matching pattern will be used
-7 = ['secondary', 'dell']        # You can specify multiple patterns. The first matching pattern will be used
-8 = ['secondary', 'dell']        # You can specify multiple patterns. The first matching pattern will be used
+4 = ['main', 'dell']                   # Case insensitive regex substring
+5 = ['main', 'dell']        # You can specify multiple patterns. The first matching pattern will be used
+6 = ['main', 'dell']        # You can specify multiple patterns. The first matching pattern will be used
+7 = ['main', 'dell']        # You can specify multiple patterns. The first matching pattern will be used
+8 = ['main', 'dell']        # You can specify multiple patterns. The first matching pattern will be used
 # 9 = ['secondary', 'dell']        # You can specify multiple patterns. The first matching pattern will be used
 # 10 = ['secondary', 'dell']        # You can specify multiple patterns. The first matching pattern will be used
 
