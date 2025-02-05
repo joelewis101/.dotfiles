@@ -46,6 +46,9 @@ vim.o.spell = true
 
 vim.o.conceallevel = 3
 
+-- turn off folding
+vim.o.foldenable = false
+
 -- Remap for dealing with word wrap
 -- This will move cursor down through softwrapped lines instead of skipping
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
