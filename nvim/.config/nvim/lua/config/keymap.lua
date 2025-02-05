@@ -1,268 +1,141 @@
 local wk = require("which-key")
 
-P = function(x)
-  print(vim.inspect(x))
-  return (x)
-end
-
-RELOAD = function(...)
-  return require 'plenary.reload'.reload_module(...)
-end
-
-R = function(name)
-  RELOAD(name)
-  return require(name)
-end
-
-local nmap = function(key, effect)
-  vim.keymap.set('n', key, effect, { silent = true, noremap = true })
-end
-
-local vmap = function(key, effect)
-  vim.keymap.set('v', key, effect, { silent = true, noremap = true })
-end
-
-local imap = function(key, effect)
-  vim.keymap.set('i', key, effect, { silent = true, noremap = true })
-end
-
--- buffers
--- nmap("[b", "<cmd>bprevious<cr>")
--- nmap("]b", "<cmd>bnext<cr>")
-
 -- disable arrow keys!
---
---
-
-nmap("<Up>", "<Nop>")
-nmap("<Down>", "<Nop>")
-nmap("<Left>", "<Nop>")
-nmap("<Right>", "<Nop>")
-imap("<Up>", "<Nop>")
-imap("<Down>", "<Nop>")
-imap("<Left>", "<Nop>")
-imap("<Right>", "<Nop>")
-vmap("<Up>", "<Nop>")
-vmap("<Down>", "<Nop>")
-vmap("<Left>", "<Nop>")
-vmap("<Right>", "<Nop>")
-
--- Resize window using <shift> arrow keys
-nmap("<S-Up>", "<cmd>resize +2<CR>")
-nmap("<S-Down>", "<cmd>resize -2<CR>")
-nmap("<S-Left>", "<cmd>vertical resize -2<CR>")
-nmap("<S-Right>", "<cmd>vertical resize +2<CR>")
-
--- Add undo break-points
-imap(",", ",<c-g>u")
-imap(".", ".<c-g>u")
-imap(";", ";<c-g>u")
-
-nmap('Q', '<Nop>')
-
-imap("µ", "%>%")
-imap("˜", "|>")
--- send code with ctrl+Enter
--- just like in e.g. RStudio
--- needs kitty (or other terminal) config:
--- map shift+enter send_text all \x1b[13;2u
--- map ctrl+enter send_text all \x1b[13;5u
--- nmap('<c-cr>', '<Plug>SlimeSendCell')
--- nmap('<s-cr>', '<Plug>SlimeSendCell')
--- imap('<c-cr>', '<esc><Plug>SlimeSendCell<cr>i')
--- imap('<s-cr>', '<esc><Plug>SlimeSendCell<cr>i')
-nmap('<c-c><c-c>', '<Plug>SlimeParagraphSend<Esc> `>j')
-
--- send code with Enter and leader Enter
-vmap('<cr>', '<Plug>SlimeRegionSend')
-
--- keep selection after indent/dedent
-vmap('>', '>gv')
-vmap('<', '<gv')
-
--- remove search highlight on esc
-nmap('<esc>', '<cmd>noh<cr>')
-
--- find files with telescope
-nmap('<c-t>', "<cmd>Telescope find_files<cr>")
-
--- paste and without overwriting register
-vmap("<leader>p", "\"_dP")
-
--- delete and without overwriting register
-vmap("<leader>d", "\"_d")
-
--- center after search and jumps
-nmap('n', "nzz")
-nmap('<c-d>', '<c-d>zz')
-nmap('<c-u>', '<c-u>zz')
+wk.add(
+  {
+    { "<Up>",    "Nop>" },
+    { "<Down>",  "<Nop>" },
+    { "<Left>",  "<Nop>" },
+    { "<Right>", "<Nop>" }
+  },
+  { mode = { "n", "v", "i" } }
+)
 
 local function toggle_diagnostics()
-  if vim.diagnostic.is_disabled() then
+  if vim.diagnostic.is_enabled() then
+    vim.diagnostic.enable(false)
+    print("Diagnostics OFF")
+  else
     vim.diagnostic.enable()
     print("Diagnostics ON")
-  else
-    vim.diagnostic.disable()
-    print("Diagnostics OFF")
   end
 end
---show kepbindings with whichkey
-wk.register(
 
+
+-- normal mode leader mappings
+wk.add(
   {
-    ['<cr>'] = { "<Plug>SlimeSendCell", "send code cell" },
-    ['<space>'] = {':lua require("telescope.builtin").buffers({sort_mru=true,ignore_current_buffer=true})<cr>', "Telescope buffers" },
-    c = {
-      name = 'code',
-      c = {
-        name = "set conceal level",
-        ['0'] = { '<cmd>set conceallevel=0<cr>', "conceallevel 0"},
-        ['1'] = { '<cmd>set conceallevel=1<cr>', "conceallevel 1"},
-        ['2'] = { '<cmd>set conceallevel=2<cr>', "conceallevel 2"},
-        ['3'] = { '<cmd>set conceallevel=3<cr>', "conceallevel 3"},
-      },
-      s    = { ':SlimeConfig<cr>', 'slime config' },
-      [','] = { ':.s/, /,\\r/g<CR>', 'split line on ,' },
-      d    = { toggle_diagnostics, "toggle diagnostics" },
-      q    = { vim.diagnostic.setqflist, "add diagnostics to quickfix list" }
+    {
+      { "<leader><cr>",    "<Plug>SlimeSendCell",                                                                       desc = "send code cell" },
+      { "<leader><space>", ':lua require("telescope.builtin").buffers({sort_mru=true,ignore_current_buffer=true})<cr>', desc = "Telescope buffers" },
+      { "<leader>c",       group = "code" },
+      { "<leader>c,",      ":.s/, /,\\r/g<CR>",                                                                         desc = "split line on ," },
+      { "<leader>cc",      group = "set conceal level" },
+      { "<leader>cc0",     "<cmd>set conceallevel=0<cr>",                                                               desc = "conceallevel 0" },
+      { "<leader>cc1",     "<cmd>set conceallevel=1<cr>",                                                               desc = "conceallevel 1" },
+      { "<leader>cc2",     "<cmd>set conceallevel=2<cr>",                                                               desc = "conceallevel 2" },
+      { "<leader>cc3",     "<cmd>set conceallevel=3<cr>",                                                               desc = "conceallevel 3" },
+      { "<leader>cd",      toggle_diagnostics,                                                                          desc = "toggle diagnostics" },
+      { "<leader>cq",      vim.diagnostic.setqflist,                                                                    desc = "add diagnostics to quickfix list" },
+      { "<leader>cs",      ":SlimeConfig<cr>",                                                                          desc = "slime config" },
+      { "<leader>e",       "<cmd>:Oil<cr>",                                                                             desc = "explore filetree" },
+      { "<leader>f",       group = "find (telescope)" },
+      { "<leader>fM",      "<cmd>Telescope man_pages<cr>",                                                              desc = "man pages" },
+      { "<leader>fb",      "<cmd>Telescope current_buffer_fuzzy_find<cr>",                                              desc = "fuzzy" },
+      { "<leader>fc",      "<cmd>Telescope git_commits<cr>",                                                            desc = "git commits" },
+      { "<leader>fd",      "<cmd>Telescope buffers<cr>",                                                                desc = "buffers" },
+      { "<leader>ff",      "<cmd>Telescope find_files<cr>",                                                             desc = "files" },
+      { "<leader>fg",      "<cmd>Telescope live_grep<cr>",                                                              desc = "grep" },
+      { "<leader>fh",      "<cmd>Telescope help_tags<cr>",                                                              desc = "help" },
+      { "<leader>fj",      "<cmd>Telescope jumplist<cr>",                                                               desc = "marks" },
+      { "<leader>fk",      "<cmd>Telescope keymaps<cr>",                                                                desc = "keymaps" },
+      { "<leader>fl",      "<cmd>Telescope loclist<cr>",                                                                desc = "loclist" },
+      { "<leader>fm",      "<cmd>Telescope marks<cr>",                                                                  desc = "marks" },
+      { "<leader>fo",      "<cmd>Telescope colorscheme<cr>",                                                            desc = "c[o]lortheme" },
+      { "<leader>fp",      desc = "project" },
+      { "<leader>fq",      "<cmd>Telescope quickfix<cr>",                                                               desc = "quickfix" },
+      { "<leader>fr",      "<cmd>Telescope lsp_references<cr>",                                                         desc = "references" },
+      { "<leader>fs",      "<cmd>Telescope lsp_document_symbols<cr>",                                                   desc = "symbols" },
+      { "<leader>g",       group = "git" },
+      { "<leader>gb",      group = "blame" },
+      { "<leader>gbb",     ":GitBlameToggle<cr>",                                                                       desc = "toggle" },
+      { "<leader>gbc",     ":GitBlameCopyCommitURL<cr>",                                                                desc = "copy" },
+      { "<leader>gbo",     ":GitBlameOpenCommitURL<cr>",                                                                desc = "open" },
+      { "<leader>gc",      ":GitConflictRefresh<cr>",                                                                   desc = "conflict" },
+      { "<leader>gd",      group = "diff" },
+      { "<leader>gdc",     ":DiffviewClose<cr>",                                                                        desc = "close" },
+      { "<leader>gdo",     ":DiffviewOpen<cr>",                                                                         desc = "open" },
+      { "<leader>gg",      ":Neogit<cr>",                                                                               desc = "neogit" },
+      { "<leader>gs",      ":Gitsigns<cr>",                                                                             desc = "gitsigns" },
+      { "<leader>gwc",     ":lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>",               desc = "worktree create" },
+      { "<leader>gws",     ":lua require('telescope').extensions.git_worktree.git_worktrees()<cr>",                     desc = "worktree switch" },
+      { "<leader>l",       group = "lsp" },
+      { "<leader>lD",      vim.lsp.buf.type_definition,                                                                 desc = "type definition" },
+      { "<leader>lR",      desc = "rename" },
+      { "<leader>la",      vim.lsp.buf.code_action,                                                                     desc = "code action" },
+      { "<leader>lf",      vim.lsp.buf.format,                                                                          desc = "format buffer with LSP" },
+      { "<leader>lm",      ":Mason<cr>",                                                                                desc = "Mason" },
+      { "<leader>lr",      "<cmd>Telescope lsp_references<cr>",                                                         desc = "references" },
+      { "<leader>p",       group = "pipe buffer to ..." },
+      { "<leader>pk",      "<cmd>:new | r ! khal printics #<cr>",                                                       desc = "khal printics" },
+      { "<leader>q",       group = "quarto" },
+      { "<leader>qE",      ":lua require'otter'.export(true)<cr>",                                                      desc = "otter export overwrite" },
+      { "<leader>qa",      ":QuartoActivate<cr>",                                                                       desc = "activate" },
+      { "<leader>qe",      ":lua require'otter'.export()<cr>",                                                          desc = "otter export" },
+      { "<leader>qh",      ":QuartoHelp ",                                                                              desc = "help" },
+      { "<leader>qo",      ":lua require'otter'.dev_setup",                                                             desc = "otter activate" },
+      { "<leader>qp",      ":lua require'quarto'.quartoPreview()<cr>",                                                  desc = "preview" },
+      { "<leader>qq",      ":lua require'quarto'.quartoClosePreview()<cr>",                                             desc = "preview close" },
+      { "<leader>s",       group = "spellcheck" },
+      { "<leader>s/",      "<cmd>setlocal spell!<cr>",                                                                  desc = "spellcheck" },
+      { "<leader>s?",      "<cmd>Telescope spell_suggest<cr>",                                                          desc = "suggest" },
+      { "<leader>sg",      "zg",                                                                                        desc = "good" },
+      { "<leader>sn",      "]s",                                                                                        desc = "next" },
+      { "<leader>sp",      "[s",                                                                                        desc = "previous" },
+      { "<leader>ss",      "<cmd>Telescope spell_suggest<cr>",                                                          desc = "spelling" },
+      { "<leader>sw",      "zw",                                                                                        desc = "wrong" },
+      { "<leader>t",       group = "treesitter" },
+      { "<leader>tc",      ":=vim.treesitter.get_captures_at_cursor()<cr>",                                             desc = "show capture" },
+      { "<leader>tn",      ":=vim.treesitter.get_node():type()<cr>",                                                    desc = "show node" },
+      { "<leader>tt",      vim.treesitter.inspect_tree,                                                                 desc = "show tree" },
     },
-    l = {
-      name = 'lsp',
-      r    = { '<cmd>Telescope lsp_references<cr>', 'references' },
-      R    = { 'rename' },
-      D    = { vim.lsp.buf.type_definition, 'type definition' },
-      a    = { vim.lsp.buf.code_action, 'code action' },
-      f    = { vim.lsp.buf.format, 'format buffer with LSP' },
-      m    = { ':Mason<cr>', 'Mason' }
-    },
-    q = {
-      name = 'quarto',
-      a    = { ":QuartoActivate<cr>", 'activate' },
-      p    = { ":lua require'quarto'.quartoPreview()<cr>", 'preview' },
-      q    = { ":lua require'quarto'.quartoClosePreview()<cr>", 'close' },
-      h    = { ":QuartoHelp ", 'help' },
-      o    = { require 'otter'.dev_setup, 'otter activate' },
-      e    = { ":lua require'otter'.export()<cr>", 'otter export' },
-      E    = { ":lua require'otter'.export(true)<cr>", 'otter export overwrite' },
-    },
-    e = { "<cmd>:Oil<cr>", "explore filetree" },
-    f = {
-      name = 'find (telescope)',
-      f = { '<cmd>Telescope find_files<cr>', 'files' },
-      h = { '<cmd>Telescope help_tags<cr>', 'help' },
-      k = { '<cmd>Telescope keymaps<cr>', 'keymaps' },
-      r = { '<cmd>Telescope lsp_references<cr>', 'references' },
-      g = { "<cmd>Telescope live_grep<cr>", "grep" },
-      b = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "fuzzy" },
-      m = { "<cmd>Telescope marks<cr>", "marks" },
-      M = { "<cmd>Telescope man_pages<cr>", "man pages" },
-      c = { "<cmd>Telescope git_commits<cr>", "git commits" },
-      s = { "<cmd>Telescope lsp_document_symbols<cr>", "symbols" },
-      d = { "<cmd>Telescope buffers<cr>", "buffers" },
-      q = { "<cmd>Telescope quickfix<cr>", "quickfix" },
-      l = { "<cmd>Telescope loclist<cr>", "loclist" },
-      j = { "<cmd>Telescope jumplist<cr>", "marks" },
-      o = { '<cmd>Telescope colorscheme<cr>', 'c[o]lortheme' },
-      p = { "project" },
-    },
-    t = {
-      name = 'treesitter',
-      t = { vim.treesitter.inspect_tree, 'show tree' },
-      c = { ':=vim.treesitter.get_captures_at_cursor()<cr>', 'show capture' },
-      n = { ':=vim.treesitter.get_node():type()<cr>', 'show node' },
-    },
-    s = {
-      name = "spellcheck",
-      s = { "<cmd>Telescope spell_suggest<cr>", "spelling" },
-      ['/'] = { '<cmd>setlocal spell!<cr>', 'spellcheck' },
-      n = { ']s', 'next' },
-      p = { '[s', 'previous' },
-      g = { 'zg', 'good' },
-      w = { 'zw', 'wrong' },
-      ['?'] = { '<cmd>Telescope spell_suggest<cr>', 'suggest' },
-    },
-    g = {
-      name = "git",
-      c = { ":GitConflictRefresh<cr>", 'conflict' },
-      g = { ":Neogit<cr>", "neogit" },
-      s = { ":Gitsigns<cr>", "gitsigns" },
-      pl = { ":Octo pr list<cr>", "gh pr list" },
-      pr = { ":Octo review start<cr>", "gh pr review" },
-      wc = { ":lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>", "worktree create" },
-      ws = { ":lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", "worktree switch" },
-      d = {
-        name = 'diff',
-        o = { ':DiffviewOpen<cr>', 'open' },
-        c = { ':DiffviewClose<cr>', 'close' },
-      },
-      b = {
-        name = 'blame',
-        b = { ':GitBlameToggle<cr>', 'toggle' },
-        o = { ':GitBlameOpenCommitURL<cr>', 'open' },
-        c = { ':GitBlameCopyCommitURL<cr>', 'copy' },
-      }
-    },
-    p = {
-      name = "pipe buffer to ...",
-      k = { '<cmd>:new | r ! khal printics #<cr>', "khal printics"}
-    }
-  }, { mode = 'n', prefix = '<leader>' }
+    { mode = { "n" } }
+  }
 )
--- normal mode
-wk.register({
-  ['<c-LeftMouse>'] = { '<cmd>lua vim.lsp.buf.definition()<CR>', 'go to definition' },
-  ["<c-e>"]         = { '<cmd>:Oil<cr>', 'explore filetree'},
-  ["<c-b>"]         = { '<cmd>:UrlView<cr>', 'oprn urlviewer'},
-  ['<esc>']         = { '<cmd>noh<cr>', 'remove search highlight' },
-  [']q']            = {':silent cnext<cr>', 'quickfix next'},
-  ['[q']            = {':silent cprev<cr>', 'quickfix prev'},
-  [']b']            = {'<cmd>bnext<cr>', 'buffer next'},
-  ['[b']            = {'<cmd>bprevious<cr>', 'buffer prev'},
+-- normal mode other mappings
 
-}, { mode = 'n', silent = true })
-
+wk.add(
+  {
+    { "<c-t>",      "<cmd>Telescope find_files<cr>" },
+    { "<c-b>",      "<cmd>:UrlView<cr>",              desc = "oprn urlviewer" },
+    { "<c-e>",      "<cmd>:Oil<cr>",                  desc = "explore filetree" },
+    { "<esc>",      "<cmd>noh<cr>",                   desc = "remove search highlight" },
+    { "[b",         "<cmd>bprevious<cr>",             desc = "buffer prev" },
+    { "[q",         ":silent cprev<cr>",              desc = "quickfix prev" },
+    { "]b",         "<cmd>bnext<cr>",                 desc = "buffer next" },
+    { "]q",         ":silent cnext<cr>",              desc = "quickfix next" },
+    { "<c-c><c-c>", "<Plug>SlimeParagraphSend<Esc> ]" },
+    -- Resize window using <shift> arrow keys
+    { "<S-Up>",     "<cmd>resize +2<CR>" },
+    { "<S-Down>",   "<cmd>resize -2<CR>" },
+    { "<S-Left>",   "<cmd>vertical resize -2<CR>" },
+    { "<S-Right>",  "<cmd>vertical resize +2<CR>" }
+  },
+  { mode = { "n" } }
+)
 
 -- visual mode
-wk.register({
-  ['<cr>'] = { '<Plug>SlimeRegionSend', 'run code region' },
-  ['<M-j>'] = { ":m'>+<cr>`<my`>mzgv`yo`z", 'move line down' },
-  ['<M-k>'] = { ":m'<-2<cr>`>my`<mzgv`yo`z", 'move line up' },
-  ['.'] = { ':norm .<cr>', 'repat last normal mode command' },
-  ['q'] = { ':norm @q<cr>', 'repat q macro' },
-}, { mode = 'v' })
+wk.add(
+  {
+    { "<cr>", "<Plug>SlimeRegionSend" }
+  },
+  { mode = { "v" } }
+)
 
-wk.register({
-  ['<leader>'] = { '<Plug>SlimeRegionSend', 'run code region' },
-  ['p'] = { '"_dP', 'replace without overwriting reg' },
-}, { mode = 'v', prefix = "<leader>" })
-
-wk.register({
-  -- ['<c-e>'] = { "<esc>:FeMaco<cr>i", "edit code" },
-  ['<m-->'] = { ' <- ', "assign" },
-  ['<m-m>'] = { ' |>', "pipe" },
-  ['<m-i>'] = { '```{r}<cr>```<esc>O', "r code chunk" },
-  ['<cm-i>'] = { '<esc>o```{python}<cr>```<esc>O', "r code chunk" },
-  ['<m-I>'] = { '<esc>o```{python}<cr>```<esc>O', "r code chunk" },
-}, { mode = 'i' })
-
--- norg
-
--- failed attempt to use Neorg with which key
-
--- _G.whichkeyNorg = function()
---   local buf = vim.api.nvim_get_current_buf()
---   wk.register({
---      i = {
---       name = "Neorg insert", -- buffer = buf,
---       -- { b = { "<cmd>:pwd<cr>", "banana", buffer = buf}}
---       -- d = { "<cmd>echo 'markdown header'<cr>", "Create header", buffer = buf },
---     }
--- },
---     { mode = 'n', prefix = "<localleader>", buffer = buf}
---   )
--- end
---
---
--- vim.cmd(([[
--- autocmd FileType norg lua whichkeyNorg()
--- ]]))
+-- insert mode
+wk.add(
+  {
+    { "¯", "|>" }
+  },
+  { mode = { "v" } }
+)
