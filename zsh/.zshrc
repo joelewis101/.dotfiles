@@ -32,6 +32,10 @@ alias ls='ls -G'
 alias lsa='ls -alh'
 alias md='mkdir -p'
 
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+
 alias proj="cd ~/projects"
 alias docs="cd ~/Documents"
 
