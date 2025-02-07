@@ -40,7 +40,7 @@ alias proj="cd ~/projects"
 alias docs="cd ~/Documents"
 
 # joes scripts
-export PATH="/Users/joelewis/scripts:$PATH"
+export PATH="/Users/joseph.lewis/scripts:$PATH"
 
 # fix <C-o> mutt
 stty discard undef
