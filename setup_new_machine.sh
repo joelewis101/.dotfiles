@@ -14,6 +14,7 @@ brew install neovim
 brew install tmux
 brew install tmuxinator
 brew install fzf
+brew install ripgrep
 # for autocomplete - better than apple shipped one
 brew install openssh
 
@@ -111,4 +112,8 @@ then
   echo '"§" = ("insertText:", "#");' >> ~/test.dict
 fi
 
+echo "Still to do manually:"
+echo "Download and install davmail"
+echo "Install miniconda"
+echo "Install radian via conda"
 
