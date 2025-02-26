@@ -3,12 +3,14 @@ local wk = require("which-key")
 -- disable arrow keys!
 wk.add(
   {
-    { "<Up>",    "Nop>" },
+  { mode = { "n", "v", "i" },
+    { "<Up>",    "<Nop>" },
     { "<Down>",  "<Nop>" },
     { "<Left>",  "<Nop>" },
     { "<Right>", "<Nop>" }
   },
   { mode = { "n", "v", "i" } }
+  }
 )
 
 local function toggle_diagnostics()
@@ -125,17 +127,15 @@ wk.add(
 )
 
 -- visual mode
-wk.add(
-  {
-    { "<cr>", "<Plug>SlimeRegionSend" }
-  },
-  { mode = { "v" } }
-)
-
+wk.add({
+    { mode = { "v" } ,
+    { "<cr>",      "<Plug>SlimeRegionSend" }
+    }
+  })
 -- insert mode
-wk.add(
-  {
-    { "¯", "|>" }
-  },
-  { mode = { "v" } }
-)
+-- wk.add(
+--   {
+--     { "¯", "|>" }
+--   },
+--   { mode = { "v" } }
+-- )
