@@ -93,7 +93,7 @@ set arrow_cursor = "no" # Change `color indicator` depending
 
 
 # conditional date 
-set index_format='%4C %Z %<[y?%<[m?%<[d?%[%H:%M ]&%[%a %d]>&%[%b %d]>&%[%m/%y ]> %-15.15L (%?l?%4l&%4c?) %s'
+set index_format='%4C %Z %X %<[y?%<[m?%<[d?%[%H:%M ]&%[%a %d]>&%[%b %d]>&%[%m/%y ]> %-15.15L (%?l?%4l&%4c?) %s'
 
 # Pager View Options
 set pager_index_lines = 10  # Shows 10 lines of index when pager is active
