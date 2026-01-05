@@ -48,7 +48,7 @@ windows:
   - davmail:
       root: ~/tmp
       panes:
-        -  ~/executables/davmail-6.2.2-3546/davmail ~/.dotfiles_private/davmail/.davmail.properties_lstm_modernauth
+        -  ~/executables/davmail-6.5.1-3873/davmail ~/.dotfiles_private/davmail/.davmail.properties_lstm_modernauth
   - neomutt: 
     - cd ~/ ; neomutt
   - zsh: 
