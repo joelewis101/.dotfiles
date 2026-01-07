@@ -33,6 +33,7 @@ brew install notmuch
 brew install notmuch-mutt
 brew install urlscan
 brew install w3m
+brew install vifm
 
 # calendar ---------------
 brew install khal
@@ -74,6 +75,7 @@ stow wezterm
 stow urlscan
 stow khal
 stow notmuch
+stow vifm
 
 # setup mail
 mkdir ~/Mail
