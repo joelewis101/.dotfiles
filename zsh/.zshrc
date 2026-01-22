@@ -45,6 +45,15 @@ export PATH="/Users/joseph.lewis/scripts:$PATH"
 # fix <C-o> mutt
 stty discard undef
 
+vicd()
+{
+    local dst="$(command vifm --choose-dir - "$@")"
+    if [ -z "$dst" ]; then
+        echo 'Directory picking cancelled/failed'
+        return 1
+    fi
+    cd "$dst"
+}
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
