@@ -4,10 +4,10 @@ tmpfile=$HOME/tmp/dirpicker_tmpfile
     
 if \[ -z "$1" \]; then
     # ranger --choosedir $tmpfile &&    # Use Ranger
-    vifm $HOME/Downloads/neomutt --choose-dir $tmpfile &&    # Use Vifm
+    vifm $HOME/Downloads --choose-dir $tmpfile &&    # Use Vifm
     # yazi "$@" --cwd-file="$tmpfile" && # Use Yazi
     sed -i '' -e 's/ /^V /g' $tmpfile &&
-    echo "$(awk 'BEGIN {printf "%s", "push "} {printf "%s", "<save-entry>\""$0"\"<enter>"}'  $tmpfile)" > $tmpfile
+    echo "$(awk 'BEGIN {printf "%s", "push "} {printf "%s", "<tag-prefix><save-entry>\""$0"\"<enter>"}'  $tmpfile)" > $tmpfile
 elif \[ $1 == "clean" \]; then
     rm $tmpfile
 fi

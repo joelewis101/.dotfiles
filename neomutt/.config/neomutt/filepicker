@@ -4,7 +4,7 @@ tmpfile=$HOME/tmp/filepicker_tmpfile
     
 if \[ -z "$1" \]; then
     # ranger --choosefiles $tmpfile &&    # Use Ranger
-    vifm . --choose-files $tmpfile &&       # Use Vifm
+    vifm . $HOME --choose-files $tmpfile &&       # Use Vifm
     # yazi "$@" --chooser-file="$tmpfile" && # Use Yazi
     sed -i '' -e 's| |^V |g' $tmpfile &&
     echo "$(awk 'BEGIN {printf "%s", "push "} {printf "%s", "<attach-file>\""$0"\"<enter>"}'  $tmpfile)" > $tmpfile

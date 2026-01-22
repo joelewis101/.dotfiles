@@ -141,9 +141,10 @@ macro index,pager T \
 unbind editor <space>
 
 # List files in directory with selected ext with fzf and send them to compose attachment, use tab to select multiple files in fzf
-macro compose A ":source ~/.config/neomutt/fzfattach.sh|<enter>" \
+macro compose F ":source ~/.config/neomutt/fzfattach.sh|<enter>" \
 "Use fzf to search for attachments; tab to multiple select"
 
-macro attach S "<shell-escape>bash $HOME/.config/neomutt/dirpicker<enter><enter-command>source $HOME/tmp/dirpicker_tmpfile<enter>y<enter>" "Choose folder with file manager"
+macro attach S "<shell-escape>bash $HOME/.config/neomutt/dirpicker<enter><enter-command>source $HOME/tmp/dirpicker_tmpfile<enter>a" "Choose folder with file manager"
 
-macro compose F "<shell-escape>bash $HOME/.config/neomutt/filepicker<enter><enter-command>source $HOME/tmp/filepicker_tmpfile<enter><shell-escape>bash $HOME/.config/neomutt/filepicker clean<enter>" "Attach with your file manager"
+macro compose A "<shell-escape>bash $HOME/.config/neomutt/filepicker<enter><enter-command>source $HOME/tmp/filepicker_tmpfile<enter><shell-escape>bash $HOME/.config/neomutt/filepicker clean<enter>" "Attach with your file manager"
+
