@@ -10,7 +10,6 @@
 
 source "~/.config/neomutt/profiles/doctors2"
 folder-hook "~/Mail/doctors/*"  'source ~/.config/neomutt/profiles/doctors2 ; set from="joelewis101@doctors.org.uk"'
-folder-hook "~/Mail/doctors/*"  "set sendmail = 'msmtp -a doctors'"
 
 source "~/.config/neomutt/profiles/UoL2"
 folder-hook "~/Mail/UoL/*"  'source ~/.config/neomutt/profiles/lstmed2 ; set from="joseph.lewis@lstmed.ac.uk"'

@@ -51,6 +51,8 @@ windows:
       -  ~/executables/davmail-6.8.1-4210/davmail ~/.dotfiles_private/davmail/.davmail.properties_lstm_modernauth
   - neomutt: 
     - cd ~/ ; neomutt
+  - msmptq_log:
+    - cd ~/.msmptq_log ; tail -f msmptq_log
   - msmtp_log:
     - cd /Users/joseph.lewis/.config/msmtp ; tail -f msmtp.log
   - zsh: 

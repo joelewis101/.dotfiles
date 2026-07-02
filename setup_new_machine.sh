@@ -35,6 +35,9 @@ brew install urlscan
 brew install w3m
 brew install vifm
 brew instal msmtp
+# add queueing scripts to path
+mkdir ~/scripts
+cp /opt/homebrew/share/msmtp/scripts/msmtpq/* ~/scripts/
 
 # calendar ---------------
 brew install khal

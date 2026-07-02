@@ -1,6 +1,8 @@
 #!/bin/zsh
 echo "Running joe's mail sync script"
 echo  $(date)
+echo "Flushing queued outgoing mail"
+msmtp-queue -r
 echo "Running imapfilter/bogofilter"
 killall imapfilter &> /dev/null
 /opt/homebrew/bin/imapfilter

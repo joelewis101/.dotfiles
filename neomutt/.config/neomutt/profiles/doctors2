@@ -25,4 +25,4 @@ set mail_check = 60
 #set smtp_pass = "`/opt/homebrew/bin/gpg -q -r joelewis101@doctors.org.uk -d ~/.config/neomutt/doctors_pwd.txt.gpg`"
 
 
-set sendmail = "msmtp -a doctors"
+set sendmail = "msmtpq -a doctors"

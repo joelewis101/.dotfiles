@@ -59,6 +59,7 @@ bind index,pager @ compose-to-sender
 bind index,pager d purge-message
 #bind index <tab> sync-mailbox
 bind index <space> collapse-thread
+bind index bc collapse-all
 
 # Email completion bindings
 bind editor <Tab> complete-query
