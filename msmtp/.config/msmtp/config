@@ -1,0 +1,24 @@
+defaults
+auth           on
+tls            on
+tls_trust_file /opt/homebrew/etc/ca-certificates/cert.pem
+logfile        ~/.config/msmtp/msmtp.log
+
+# Account definition
+account        lstmed
+host           127.0.0.1
+port           1025
+from           joseph.lewis@lstmed.ac.uk
+user 	       joseph.lewis@lstmed.ac.uk
+auth           plain
+passwordeval   "/opt/homebrew/bin/gpg -q -r joelewis101@doctors.org.uk -d ~/.config/neomutt/lstmed_pwd.txt.gpg"
+tls            off
+
+account        doctors
+host           mail1.doctors.org.uk
+port           465
+from           joelewis101@doctors.org.uk
+user 	       joelewis101@doctors.org.uk
+passwordeval   "/opt/homebrew/bin/gpg -q -r joelewis101@doctors.org.uk -d ~/.config/neomutt/doctors_pwd.txt.gpg"
+tls_starttls   off
+

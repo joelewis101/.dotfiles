@@ -34,6 +34,7 @@ brew install notmuch-mutt
 brew install urlscan
 brew install w3m
 brew install vifm
+brew instal msmtp
 
 # calendar ---------------
 brew install khal
