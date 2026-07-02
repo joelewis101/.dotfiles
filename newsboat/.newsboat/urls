@@ -3,7 +3,7 @@
 "query:authors:tags # \"Authors\" and unread = \"yes\""
 "query:journals:tags # \"Journals\""
 
-https://quarto.org/docs/blog/index.xml data_science
+https://opensource.posit.co/blog/index.xml data_science
 https://solomonkurz.netlify.com/index.xml data_science
 http://fharrell.com/index.xml data_science
 https://ikashnitsky.github.io/atom.xml data_science
