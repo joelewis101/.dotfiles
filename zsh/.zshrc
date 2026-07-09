@@ -10,6 +10,7 @@ export EDITOR=nvim
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 export MSMTPQ_LOG=~/.msmptq_log/msmptq_log
+export MSMTP=/opt/homebrew/bin/msmtp
 
 # vim mode
 bindkey -v
