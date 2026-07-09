@@ -1,0 +1,9 @@
+[[mgr.prepend_keymap]]
+on   = [ "g", "p" ]
+run  = "cd ~/projects"
+desc = "Cd to ~/projects"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "i" ]
+run  = "cd ~/projects/INTERCEPT"
+desc = "Cd to ~/projects/INTERCEPT"

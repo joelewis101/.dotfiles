@@ -33,11 +33,15 @@ brew install notmuch
 brew install notmuch-mutt
 brew install urlscan
 brew install w3m
-brew install vifm
+# brew install vifm
+brew install yazi
+brew install poppler # pdf viewing in yazi
 brew instal msmtp
-# add queueing scripts to path
+# add queueing scripts to path for mail
 mkdir ~/scripts
 cp /opt/homebrew/share/msmtp/scripts/msmtpq/* ~/scripts/
+
+
 
 # calendar ---------------
 brew install khal
